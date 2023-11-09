@@ -60,27 +60,7 @@ namespace QLBVMB_v2._0
             txt_Clock.Text = dt.ToString();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void textBox4_TextChanged(object sender, EventArgs e)
         {
 
         }
