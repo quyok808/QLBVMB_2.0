@@ -112,6 +112,12 @@
     <Compile Include="Login_Register\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Lập phiếu thu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lập phiếu thu.Designer.cs">
+      <DependentUpon>Lập phiếu thu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login_Register\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lập phiếu thu.resx">
+      <DependentUpon>Lập phiếu thu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main_Form.resx">
       <DependentUpon>Main_Form.cs</DependentUpon>
