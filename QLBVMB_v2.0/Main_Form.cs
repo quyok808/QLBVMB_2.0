@@ -64,5 +64,10 @@ namespace QLBVMB_v2._0
         {
 
         }
+
+        private void textBox13_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

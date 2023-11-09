@@ -162,6 +162,12 @@
     <Compile Include="Thông tin hãng.Designer.cs">
       <DependentUpon>Thông tin hãng.cs</DependentUpon>
     </Compile>
+    <Compile Include="Thông tin khách hàng.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Thông tin khách hàng.Designer.cs">
+      <DependentUpon>Thông tin khách hàng.cs</DependentUpon>
+    </Compile>
     <Compile Include="Thông tin nhân viên.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Thông tin hãng.resx">
       <DependentUpon>Thông tin hãng.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Thông tin khách hàng.resx">
+      <DependentUpon>Thông tin khách hàng.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Thông tin nhân viên.resx">
       <DependentUpon>Thông tin nhân viên.cs</DependentUpon>
