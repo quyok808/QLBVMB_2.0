@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QLBVMB_v2._0.QuanLi
+namespace QLBVMB_v2._0.ThongKe
 {
-    public partial class QL_KhuyenMai : Form
+    public partial class ChiTietVe : Form
     {
-        public QL_KhuyenMai()
+        public ChiTietVe()
         {
             InitializeComponent();
         }

@@ -1,5 +1,4 @@
-﻿using QLBVMB_v2._0.Login_Register;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,46 +27,13 @@ namespace QLBVMB_v2._0
         {
             Application.Exit();
         }
-
-        private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Change_Password frm = new Change_Password();
-            frm.TopLevel = false;
-            panel_Show.Controls.Add(frm);
-            frm.Dock = DockStyle.Fill;
-            frm.Show();
-        }
-
-        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Login frm = new Login();
-            frm.Show();
-        }
-
         private void Main_Form_Load(object sender, EventArgs e)
         {
             ChonGhe frm = new ChonGhe();
             frm.TopLevel = false;
-            panel_Show.Controls.Add(frm);
+            //panel_Show.Controls.Add(frm);
             frm.Dock = DockStyle.Fill;
             frm.Show();
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            DateTime dt = DateTime.Now;
-            txt_Clock.Text = dt.ToString();
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox13_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

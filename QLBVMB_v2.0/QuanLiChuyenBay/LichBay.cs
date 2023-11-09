@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QLBVMB_v2._0.QuanLi
+namespace QLBVMB_v2._0.QuanLiChuyenBay
 {
-    public partial class QL_LichBay : Form
+    public partial class LichBay : Form
     {
-        public QL_LichBay()
+        public LichBay()
         {
             InitializeComponent();
         }

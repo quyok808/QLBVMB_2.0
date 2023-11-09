@@ -1,4 +1,5 @@
-﻿using QLBVMB_v2._0.Login_Register;
+﻿using QLBVMB_v2._0.QuanLiChuyenBay;
+using QLBVMB_v2._0.ThongKe;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace QLBVMB_v2._0
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main_Form());
+            Application.Run(new ChiTietVe());
         }
     }
 }
