@@ -35,5 +35,28 @@ namespace QLBVMB_v2._0
             frm.Dock = DockStyle.Fill;
             frm.Show();
         }
+
+        #region Form move
+        public Point downPoint = Point.Empty;
+        private void Main_Form_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+                downPoint = new Point(e.X, e.Y);
+        }
+
+        private void Main_Form_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (downPoint != Point.Empty)
+                Location = new Point(Left + e.X - downPoint.X, Top + e.Y - downPoint.Y);
+        }
+
+        private void Main_Form_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+                downPoint = Point.Empty;
+        }
+        #endregion
+
+
     }
 }

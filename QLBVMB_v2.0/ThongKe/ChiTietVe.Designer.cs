@@ -31,18 +31,18 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txt_NoiDi = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txt_MaCB = new System.Windows.Forms.TextBox();
-            this.DTP_NgayGioDi = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txt_NoiDen = new System.Windows.Forms.TextBox();
-            this.DTP_NgayGioDenDuKien = new System.Windows.Forms.DateTimePicker();
-            this.txt_SoHieuMayBay = new System.Windows.Forms.TextBox();
-            this.txt_GiaVe = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txt_Thue = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.txt_TongTien = new System.Windows.Forms.TextBox();
+            this.txt_SoHieuMayBay = new System.Windows.Forms.TextBox();
+            this.txt_Thue = new System.Windows.Forms.TextBox();
+            this.txt_MaCB = new System.Windows.Forms.TextBox();
+            this.txt_GiaVe = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txt_NoiDen = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lb_NgayGioDi = new System.Windows.Forms.Label();
+            this.lb_NgayGioDen = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,13 +66,13 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lb_NgayGioDen);
+            this.groupBox1.Controls.Add(this.lb_NgayGioDi);
             this.groupBox1.Controls.Add(this.txt_TongTien);
             this.groupBox1.Controls.Add(this.txt_SoHieuMayBay);
             this.groupBox1.Controls.Add(this.txt_Thue);
             this.groupBox1.Controls.Add(this.txt_MaCB);
             this.groupBox1.Controls.Add(this.txt_GiaVe);
-            this.groupBox1.Controls.Add(this.DTP_NgayGioDenDuKien);
-            this.groupBox1.Controls.Add(this.DTP_NgayGioDi);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txt_NoiDen);
@@ -87,53 +87,12 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chi tiết hoá đơn";
             // 
-            // txt_MaCB
+            // txt_TongTien
             // 
-            this.txt_MaCB.Location = new System.Drawing.Point(21, 100);
-            this.txt_MaCB.Name = "txt_MaCB";
-            this.txt_MaCB.Size = new System.Drawing.Size(123, 22);
-            this.txt_MaCB.TabIndex = 3;
-            this.txt_MaCB.Text = "Mã chuyến bay";
-            // 
-            // DTP_NgayGioDi
-            // 
-            this.DTP_NgayGioDi.CustomFormat = "hh:mm dd/MM/yyyy";
-            this.DTP_NgayGioDi.Enabled = false;
-            this.DTP_NgayGioDi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DTP_NgayGioDi.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DTP_NgayGioDi.Location = new System.Drawing.Point(21, 60);
-            this.DTP_NgayGioDi.Name = "DTP_NgayGioDi";
-            this.DTP_NgayGioDi.Size = new System.Drawing.Size(123, 22);
-            this.DTP_NgayGioDi.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(167, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Đến";
-            // 
-            // txt_NoiDen
-            // 
-            this.txt_NoiDen.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_NoiDen.Location = new System.Drawing.Point(204, 21);
-            this.txt_NoiDen.Name = "txt_NoiDen";
-            this.txt_NoiDen.Size = new System.Drawing.Size(100, 22);
-            this.txt_NoiDen.TabIndex = 1;
-            // 
-            // DTP_NgayGioDenDuKien
-            // 
-            this.DTP_NgayGioDenDuKien.CustomFormat = "hh:mm dd/MM/yyyy";
-            this.DTP_NgayGioDenDuKien.Enabled = false;
-            this.DTP_NgayGioDenDuKien.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DTP_NgayGioDenDuKien.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DTP_NgayGioDenDuKien.Location = new System.Drawing.Point(170, 60);
-            this.DTP_NgayGioDenDuKien.Name = "DTP_NgayGioDenDuKien";
-            this.DTP_NgayGioDenDuKien.Size = new System.Drawing.Size(134, 22);
-            this.DTP_NgayGioDenDuKien.TabIndex = 2;
+            this.txt_TongTien.Location = new System.Drawing.Point(105, 222);
+            this.txt_TongTien.Name = "txt_TongTien";
+            this.txt_TongTien.Size = new System.Drawing.Size(199, 22);
+            this.txt_TongTien.TabIndex = 3;
             // 
             // txt_SoHieuMayBay
             // 
@@ -143,39 +102,27 @@
             this.txt_SoHieuMayBay.TabIndex = 3;
             this.txt_SoHieuMayBay.Text = "Mã máy bay";
             // 
-            // txt_GiaVe
-            // 
-            this.txt_GiaVe.Location = new System.Drawing.Point(105, 150);
-            this.txt_GiaVe.Name = "txt_GiaVe";
-            this.txt_GiaVe.Size = new System.Drawing.Size(100, 22);
-            this.txt_GiaVe.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(18, 156);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 16);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Giá vé";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(18, 192);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 16);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Thuế và phí";
-            // 
             // txt_Thue
             // 
             this.txt_Thue.Location = new System.Drawing.Point(105, 186);
             this.txt_Thue.Name = "txt_Thue";
-            this.txt_Thue.Size = new System.Drawing.Size(100, 22);
+            this.txt_Thue.Size = new System.Drawing.Size(199, 22);
             this.txt_Thue.TabIndex = 3;
+            // 
+            // txt_MaCB
+            // 
+            this.txt_MaCB.Location = new System.Drawing.Point(21, 100);
+            this.txt_MaCB.Name = "txt_MaCB";
+            this.txt_MaCB.Size = new System.Drawing.Size(123, 22);
+            this.txt_MaCB.TabIndex = 3;
+            this.txt_MaCB.Text = "Mã chuyến bay";
+            // 
+            // txt_GiaVe
+            // 
+            this.txt_GiaVe.Location = new System.Drawing.Point(105, 150);
+            this.txt_GiaVe.Name = "txt_GiaVe";
+            this.txt_GiaVe.Size = new System.Drawing.Size(199, 22);
+            this.txt_GiaVe.TabIndex = 3;
             // 
             // label5
             // 
@@ -187,12 +134,63 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Tổng tiền";
             // 
-            // txt_TongTien
+            // label3
             // 
-            this.txt_TongTien.Location = new System.Drawing.Point(105, 222);
-            this.txt_TongTien.Name = "txt_TongTien";
-            this.txt_TongTien.Size = new System.Drawing.Size(100, 22);
-            this.txt_TongTien.TabIndex = 3;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(18, 192);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(77, 16);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Thuế và phí";
+            // 
+            // txt_NoiDen
+            // 
+            this.txt_NoiDen.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_NoiDen.Location = new System.Drawing.Point(204, 21);
+            this.txt_NoiDen.Name = "txt_NoiDen";
+            this.txt_NoiDen.Size = new System.Drawing.Size(100, 22);
+            this.txt_NoiDen.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(18, 156);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 16);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Giá vé";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(167, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(31, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Đến";
+            // 
+            // lb_NgayGioDi
+            // 
+            this.lb_NgayGioDi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_NgayGioDi.Location = new System.Drawing.Point(21, 61);
+            this.lb_NgayGioDi.Name = "lb_NgayGioDi";
+            this.lb_NgayGioDi.Size = new System.Drawing.Size(123, 22);
+            this.lb_NgayGioDi.TabIndex = 4;
+            this.lb_NgayGioDi.Text = "label6";
+            this.lb_NgayGioDi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lb_NgayGioDen
+            // 
+            this.lb_NgayGioDen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_NgayGioDen.Location = new System.Drawing.Point(170, 61);
+            this.lb_NgayGioDen.Name = "lb_NgayGioDen";
+            this.lb_NgayGioDen.Size = new System.Drawing.Size(134, 22);
+            this.lb_NgayGioDen.TabIndex = 4;
+            this.lb_NgayGioDen.Text = "label6";
+            this.lb_NgayGioDen.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ChiTietVe
             // 
@@ -213,10 +211,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txt_NoiDi;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DateTimePicker DTP_NgayGioDi;
         private System.Windows.Forms.TextBox txt_MaCB;
         private System.Windows.Forms.TextBox txt_SoHieuMayBay;
-        private System.Windows.Forms.DateTimePicker DTP_NgayGioDenDuKien;
         private System.Windows.Forms.TextBox txt_NoiDen;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_TongTien;
@@ -225,5 +221,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lb_NgayGioDi;
+        private System.Windows.Forms.Label lb_NgayGioDen;
     }
 }

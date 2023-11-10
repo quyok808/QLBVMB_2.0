@@ -49,11 +49,26 @@
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.DTP_QLCB_NgayDi = new System.Windows.Forms.DateTimePicker();
+            this.cmb_QLCB_HangHangKhong = new System.Windows.Forms.ComboBox();
+            this.cmb_QLCB_NoiDen = new System.Windows.Forms.ComboBox();
+            this.cmb_QLCB_KhoiHanhTu = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.TS_QLCB_Them = new System.Windows.Forms.ToolStripButton();
             this.TS_QLCB_Xoa = new System.Windows.Forms.ToolStripButton();
             this.TS_QLCB_Update = new System.Windows.Forms.ToolStripButton();
+            this.TS_QLCB_LichBay = new System.Windows.Forms.ToolStripButton();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button3 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -136,21 +151,6 @@
             this.Column30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cmb_QLCB_KhoiHanhTu = new System.Windows.Forms.ComboBox();
-            this.cmb_QLCB_NoiDen = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.DTP_QLCB_NgayDi = new System.Windows.Forms.DateTimePicker();
-            this.label15 = new System.Windows.Forms.Label();
-            this.cmb_QLCB_HangHangKhong = new System.Windows.Forms.ComboBox();
-            this.TS_QLCB_LichBay = new System.Windows.Forms.ToolStripButton();
-            this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.toolStrip2.SuspendLayout();
@@ -339,6 +339,78 @@
             this.tabPage2.Text = "Quản lí chuyến bay";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // DTP_QLCB_NgayDi
+            // 
+            this.DTP_QLCB_NgayDi.CustomFormat = "dd/MM/yyyy";
+            this.DTP_QLCB_NgayDi.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DTP_QLCB_NgayDi.Location = new System.Drawing.Point(109, 191);
+            this.DTP_QLCB_NgayDi.Name = "DTP_QLCB_NgayDi";
+            this.DTP_QLCB_NgayDi.Size = new System.Drawing.Size(148, 22);
+            this.DTP_QLCB_NgayDi.TabIndex = 18;
+            // 
+            // cmb_QLCB_HangHangKhong
+            // 
+            this.cmb_QLCB_HangHangKhong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_QLCB_HangHangKhong.FormattingEnabled = true;
+            this.cmb_QLCB_HangHangKhong.Location = new System.Drawing.Point(382, 189);
+            this.cmb_QLCB_HangHangKhong.Name = "cmb_QLCB_HangHangKhong";
+            this.cmb_QLCB_HangHangKhong.Size = new System.Drawing.Size(148, 24);
+            this.cmb_QLCB_HangHangKhong.TabIndex = 17;
+            // 
+            // cmb_QLCB_NoiDen
+            // 
+            this.cmb_QLCB_NoiDen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_QLCB_NoiDen.FormattingEnabled = true;
+            this.cmb_QLCB_NoiDen.Location = new System.Drawing.Point(300, 153);
+            this.cmb_QLCB_NoiDen.Name = "cmb_QLCB_NoiDen";
+            this.cmb_QLCB_NoiDen.Size = new System.Drawing.Size(148, 24);
+            this.cmb_QLCB_NoiDen.TabIndex = 17;
+            // 
+            // cmb_QLCB_KhoiHanhTu
+            // 
+            this.cmb_QLCB_KhoiHanhTu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_QLCB_KhoiHanhTu.FormattingEnabled = true;
+            this.cmb_QLCB_KhoiHanhTu.Location = new System.Drawing.Point(109, 153);
+            this.cmb_QLCB_KhoiHanhTu.Name = "cmb_QLCB_KhoiHanhTu";
+            this.cmb_QLCB_KhoiHanhTu.Size = new System.Drawing.Size(148, 24);
+            this.cmb_QLCB_KhoiHanhTu.TabIndex = 17;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(263, 196);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(113, 16);
+            this.label15.TabIndex = 16;
+            this.label15.Text = "Hãng hàng không";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(22, 191);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(54, 16);
+            this.label10.TabIndex = 16;
+            this.label10.Text = "Ngày đi";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(263, 161);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(31, 16);
+            this.label9.TabIndex = 16;
+            this.label9.Text = "Đến";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(22, 161);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(81, 16);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Khởi hành từ ";
+            // 
             // dataGridView3
             // 
             this.dataGridView3.AllowUserToAddRows = false;
@@ -360,6 +432,48 @@
             this.dataGridView3.Size = new System.Drawing.Size(1221, 296);
             this.dataGridView3.TabIndex = 15;
             // 
+            // Column22
+            // 
+            this.Column22.HeaderText = "Mã CB";
+            this.Column22.MinimumWidth = 6;
+            this.Column22.Name = "Column22";
+            this.Column22.ReadOnly = true;
+            // 
+            // Column26
+            // 
+            this.Column26.HeaderText = "Hãng hàng không";
+            this.Column26.MinimumWidth = 6;
+            this.Column26.Name = "Column26";
+            this.Column26.ReadOnly = true;
+            // 
+            // Column23
+            // 
+            this.Column23.HeaderText = "Nơi đi";
+            this.Column23.MinimumWidth = 6;
+            this.Column23.Name = "Column23";
+            this.Column23.ReadOnly = true;
+            // 
+            // Column25
+            // 
+            this.Column25.HeaderText = "Ngày đi";
+            this.Column25.MinimumWidth = 6;
+            this.Column25.Name = "Column25";
+            this.Column25.ReadOnly = true;
+            // 
+            // Column28
+            // 
+            this.Column28.HeaderText = "Giờ khởi hành";
+            this.Column28.MinimumWidth = 6;
+            this.Column28.Name = "Column28";
+            this.Column28.ReadOnly = true;
+            // 
+            // Column24
+            // 
+            this.Column24.HeaderText = "Nơi đến";
+            this.Column24.MinimumWidth = 6;
+            this.Column24.Name = "Column24";
+            this.Column24.ReadOnly = true;
+            // 
             // toolStrip1
             // 
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
@@ -380,7 +494,7 @@
             this.TS_QLCB_Them.Image = ((System.Drawing.Image)(resources.GetObject("TS_QLCB_Them.Image")));
             this.TS_QLCB_Them.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.TS_QLCB_Them.Name = "TS_QLCB_Them";
-            this.TS_QLCB_Them.Size = new System.Drawing.Size(148, 28);
+            this.TS_QLCB_Them.Size = new System.Drawing.Size(148, 24);
             this.TS_QLCB_Them.Text = "Thêm chuyến bay";
             // 
             // TS_QLCB_Xoa
@@ -388,7 +502,7 @@
             this.TS_QLCB_Xoa.Image = ((System.Drawing.Image)(resources.GetObject("TS_QLCB_Xoa.Image")));
             this.TS_QLCB_Xoa.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.TS_QLCB_Xoa.Name = "TS_QLCB_Xoa";
-            this.TS_QLCB_Xoa.Size = new System.Drawing.Size(137, 28);
+            this.TS_QLCB_Xoa.Size = new System.Drawing.Size(137, 24);
             this.TS_QLCB_Xoa.Text = "Xoá chuyến bay";
             // 
             // TS_QLCB_Update
@@ -396,8 +510,16 @@
             this.TS_QLCB_Update.Image = ((System.Drawing.Image)(resources.GetObject("TS_QLCB_Update.Image")));
             this.TS_QLCB_Update.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.TS_QLCB_Update.Name = "TS_QLCB_Update";
-            this.TS_QLCB_Update.Size = new System.Drawing.Size(92, 28);
+            this.TS_QLCB_Update.Size = new System.Drawing.Size(92, 24);
             this.TS_QLCB_Update.Text = "Cập nhật";
+            // 
+            // TS_QLCB_LichBay
+            // 
+            this.TS_QLCB_LichBay.Image = ((System.Drawing.Image)(resources.GetObject("TS_QLCB_LichBay.Image")));
+            this.TS_QLCB_LichBay.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TS_QLCB_LichBay.Name = "TS_QLCB_LichBay";
+            this.TS_QLCB_LichBay.Size = new System.Drawing.Size(87, 24);
+            this.TS_QLCB_LichBay.Text = "Lịch bay";
             // 
             // tabPage1
             // 
@@ -468,7 +590,7 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(423, 267);
+            this.dataGridView2.Size = new System.Drawing.Size(423, 278);
             this.dataGridView2.TabIndex = 23;
             // 
             // comboBox2
@@ -516,6 +638,8 @@
             // 
             // dateTimePicker2
             // 
+            this.dateTimePicker2.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker2.Location = new System.Drawing.Point(557, 124);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 22);
@@ -523,6 +647,8 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(557, 96);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
@@ -1139,141 +1265,22 @@
             this.tabPage7.Text = "Thống kê";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(22, 161);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(81, 16);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "Khởi hành từ ";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(263, 161);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(31, 16);
-            this.label9.TabIndex = 16;
-            this.label9.Text = "Đến";
-            // 
-            // cmb_QLCB_KhoiHanhTu
-            // 
-            this.cmb_QLCB_KhoiHanhTu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_QLCB_KhoiHanhTu.FormattingEnabled = true;
-            this.cmb_QLCB_KhoiHanhTu.Location = new System.Drawing.Point(109, 153);
-            this.cmb_QLCB_KhoiHanhTu.Name = "cmb_QLCB_KhoiHanhTu";
-            this.cmb_QLCB_KhoiHanhTu.Size = new System.Drawing.Size(148, 24);
-            this.cmb_QLCB_KhoiHanhTu.TabIndex = 17;
-            // 
-            // cmb_QLCB_NoiDen
-            // 
-            this.cmb_QLCB_NoiDen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_QLCB_NoiDen.FormattingEnabled = true;
-            this.cmb_QLCB_NoiDen.Location = new System.Drawing.Point(300, 153);
-            this.cmb_QLCB_NoiDen.Name = "cmb_QLCB_NoiDen";
-            this.cmb_QLCB_NoiDen.Size = new System.Drawing.Size(148, 24);
-            this.cmb_QLCB_NoiDen.TabIndex = 17;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(22, 191);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(54, 16);
-            this.label10.TabIndex = 16;
-            this.label10.Text = "Ngày đi";
-            // 
-            // DTP_QLCB_NgayDi
-            // 
-            this.DTP_QLCB_NgayDi.CustomFormat = "dd/MM/yyyy";
-            this.DTP_QLCB_NgayDi.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DTP_QLCB_NgayDi.Location = new System.Drawing.Point(109, 191);
-            this.DTP_QLCB_NgayDi.Name = "DTP_QLCB_NgayDi";
-            this.DTP_QLCB_NgayDi.Size = new System.Drawing.Size(148, 22);
-            this.DTP_QLCB_NgayDi.TabIndex = 18;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(263, 196);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(113, 16);
-            this.label15.TabIndex = 16;
-            this.label15.Text = "Hãng hàng không";
-            // 
-            // cmb_QLCB_HangHangKhong
-            // 
-            this.cmb_QLCB_HangHangKhong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_QLCB_HangHangKhong.FormattingEnabled = true;
-            this.cmb_QLCB_HangHangKhong.Location = new System.Drawing.Point(382, 189);
-            this.cmb_QLCB_HangHangKhong.Name = "cmb_QLCB_HangHangKhong";
-            this.cmb_QLCB_HangHangKhong.Size = new System.Drawing.Size(148, 24);
-            this.cmb_QLCB_HangHangKhong.TabIndex = 17;
-            // 
-            // TS_QLCB_LichBay
-            // 
-            this.TS_QLCB_LichBay.Image = ((System.Drawing.Image)(resources.GetObject("TS_QLCB_LichBay.Image")));
-            this.TS_QLCB_LichBay.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.TS_QLCB_LichBay.Name = "TS_QLCB_LichBay";
-            this.TS_QLCB_LichBay.Size = new System.Drawing.Size(87, 28);
-            this.TS_QLCB_LichBay.Text = "Lịch bay";
-            // 
-            // Column22
-            // 
-            this.Column22.HeaderText = "Mã CB";
-            this.Column22.MinimumWidth = 6;
-            this.Column22.Name = "Column22";
-            this.Column22.ReadOnly = true;
-            // 
-            // Column26
-            // 
-            this.Column26.HeaderText = "Hãng hàng không";
-            this.Column26.MinimumWidth = 6;
-            this.Column26.Name = "Column26";
-            this.Column26.ReadOnly = true;
-            // 
-            // Column23
-            // 
-            this.Column23.HeaderText = "Nơi đi";
-            this.Column23.MinimumWidth = 6;
-            this.Column23.Name = "Column23";
-            this.Column23.ReadOnly = true;
-            // 
-            // Column25
-            // 
-            this.Column25.HeaderText = "Ngày đi";
-            this.Column25.MinimumWidth = 6;
-            this.Column25.Name = "Column25";
-            this.Column25.ReadOnly = true;
-            // 
-            // Column28
-            // 
-            this.Column28.HeaderText = "Giờ khởi hành";
-            this.Column28.MinimumWidth = 6;
-            this.Column28.Name = "Column28";
-            this.Column28.ReadOnly = true;
-            // 
-            // Column24
-            // 
-            this.Column24.HeaderText = "Nơi đến";
-            this.Column24.MinimumWidth = 6;
-            this.Column24.Name = "Column24";
-            this.Column24.ReadOnly = true;
-            // 
             // Main_Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1243, 681);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "Main_Form";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_Form_FormClosed);
             this.Load += new System.EventHandler(this.Main_Form_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Main_Form_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Main_Form_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Main_Form_MouseUp);
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
