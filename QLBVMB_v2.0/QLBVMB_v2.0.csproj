@@ -80,7 +80,7 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="XanderUI">
-      <HintPath>C:\Users\nguye\Downloads\Winform LT\XanderUIFramework Demo\XanderUIFramework Demo\XanderUIFramework Demo\bin\Debug\XanderUI.dll</HintPath>
+      <HintPath>..\..\..\..\XanderUIFramework Demo\XanderUIFramework Demo\XanderUIFramework Demo\bin\Debug\XanderUI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -102,11 +102,11 @@
     <Compile Include="DoanhThu\ThongKeHD.Designer.cs">
       <DependentUpon>ThongKeHD.cs</DependentUpon>
     </Compile>
-    <Compile Include="Lập phiếu thu.cs">
+    <Compile Include="LapPhieuChi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Lập phiếu thu.Designer.cs">
-      <DependentUpon>Lập phiếu thu.cs</DependentUpon>
+    <Compile Include="LapPhieuChi.Designer.cs">
+      <DependentUpon>LapPhieuChi.cs</DependentUpon>
     </Compile>
     <Compile Include="Main_Form.cs">
       <SubType>Form</SubType>
@@ -162,8 +162,8 @@
       <DependentUpon>ChonGhe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DoanhThu\RPHD.rdlc" />
-    <EmbeddedResource Include="Lập phiếu thu.resx">
-      <DependentUpon>Lập phiếu thu.cs</DependentUpon>
+    <EmbeddedResource Include="LapPhieuChi.resx">
+      <DependentUpon>LapPhieuChi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main_Form.resx">
       <DependentUpon>Main_Form.cs</DependentUpon>

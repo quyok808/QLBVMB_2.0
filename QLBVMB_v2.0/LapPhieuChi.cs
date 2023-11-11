@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QLBVMB_v2._0
 {
-    public partial class Lập_phiếu_thu : Form
+    public partial class LapPhieuChi : Form
     {
-        public Lập_phiếu_thu()
+        public LapPhieuChi()
         {
             InitializeComponent();
         }

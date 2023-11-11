@@ -55,8 +55,12 @@ namespace QLBVMB_v2._0
             if (e.Button == MouseButtons.Left)
                 downPoint = Point.Empty;
         }
+
         #endregion
 
-
+        private void xuiButton1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_Form));
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.label8 = new System.Windows.Forms.Label();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
@@ -114,6 +112,12 @@
             this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.textBox28 = new System.Windows.Forms.TextBox();
+            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.textBox15 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox23 = new System.Windows.Forms.TextBox();
             this.textBox22 = new System.Windows.Forms.TextBox();
@@ -127,12 +131,6 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.textBox28 = new System.Windows.Forms.TextBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -145,12 +143,14 @@
             this.textBox26 = new System.Windows.Forms.TextBox();
             this.textBox24 = new System.Windows.Forms.TextBox();
             this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
             this.dataGridView7 = new System.Windows.Forms.DataGridView();
             this.Column29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.xuiButton1 = new XanderUI.XUIButton();
+            this.xuiButton2 = new XanderUI.XUIButton();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.toolStrip2.SuspendLayout();
@@ -169,6 +169,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage4
@@ -185,7 +186,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1221, 518);
+            this.tabPage4.Size = new System.Drawing.Size(1235, 528);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Quản lí nhân viên";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -299,7 +300,7 @@
             this.toolStripButton7});
             this.toolStrip2.Location = new System.Drawing.Point(3, 3);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(1215, 27);
+            this.toolStrip2.Size = new System.Drawing.Size(1229, 27);
             this.toolStrip2.TabIndex = 1;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -334,7 +335,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1221, 518);
+            this.tabPage2.Size = new System.Drawing.Size(1235, 528);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Quản lí chuyến bay";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -485,7 +486,7 @@
             this.TS_QLCB_LichBay});
             this.toolStrip1.Location = new System.Drawing.Point(3, 3);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1215, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(1229, 27);
             this.toolStrip1.TabIndex = 14;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -546,7 +547,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1221, 518);
+            this.tabPage1.Size = new System.Drawing.Size(1235, 528);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Trang chủ";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -798,10 +799,11 @@
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage7);
-            this.tabControl1.Location = new System.Drawing.Point(2, 122);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tabControl1.Location = new System.Drawing.Point(0, 124);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1229, 547);
+            this.tabControl1.Size = new System.Drawing.Size(1243, 557);
             this.tabControl1.TabIndex = 7;
             // 
             // tabPage3
@@ -816,7 +818,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1221, 518);
+            this.tabPage3.Size = new System.Drawing.Size(1235, 528);
             this.tabPage3.TabIndex = 4;
             this.tabPage3.Text = "Quản lí khách hàng";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -907,7 +909,7 @@
             this.toolStripButton10});
             this.toolStrip3.Location = new System.Drawing.Point(3, 3);
             this.toolStrip3.Name = "toolStrip3";
-            this.toolStrip3.Size = new System.Drawing.Size(1215, 27);
+            this.toolStrip3.Size = new System.Drawing.Size(1229, 27);
             this.toolStrip3.TabIndex = 0;
             this.toolStrip3.Text = "toolStrip3";
             // 
@@ -929,25 +931,67 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.textBox19);
+            this.tabPage5.Controls.Add(this.textBox28);
+            this.tabPage5.Controls.Add(this.textBox18);
+            this.tabPage5.Controls.Add(this.textBox17);
+            this.tabPage5.Controls.Add(this.textBox16);
+            this.tabPage5.Controls.Add(this.textBox15);
             this.tabPage5.Controls.Add(this.groupBox1);
             this.tabPage5.Controls.Add(this.button6);
             this.tabPage5.Controls.Add(this.button7);
             this.tabPage5.Controls.Add(this.button5);
             this.tabPage5.Controls.Add(this.button4);
-            this.tabPage5.Controls.Add(this.textBox28);
-            this.tabPage5.Controls.Add(this.textBox19);
-            this.tabPage5.Controls.Add(this.textBox18);
-            this.tabPage5.Controls.Add(this.textBox17);
-            this.tabPage5.Controls.Add(this.textBox16);
-            this.tabPage5.Controls.Add(this.textBox15);
             this.tabPage5.Controls.Add(this.dataGridView6);
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1221, 518);
+            this.tabPage5.Size = new System.Drawing.Size(1235, 528);
             this.tabPage5.TabIndex = 5;
             this.tabPage5.Text = "Quản lí khuyến mãi";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // textBox19
+            // 
+            this.textBox19.Location = new System.Drawing.Point(985, 340);
+            this.textBox19.Name = "textBox19";
+            this.textBox19.Size = new System.Drawing.Size(236, 22);
+            this.textBox19.TabIndex = 1;
+            // 
+            // textBox28
+            // 
+            this.textBox28.Location = new System.Drawing.Point(752, 340);
+            this.textBox28.Name = "textBox28";
+            this.textBox28.Size = new System.Drawing.Size(240, 22);
+            this.textBox28.TabIndex = 1;
+            // 
+            // textBox18
+            // 
+            this.textBox18.Location = new System.Drawing.Point(518, 340);
+            this.textBox18.Name = "textBox18";
+            this.textBox18.Size = new System.Drawing.Size(235, 22);
+            this.textBox18.TabIndex = 1;
+            // 
+            // textBox17
+            // 
+            this.textBox17.Location = new System.Drawing.Point(285, 340);
+            this.textBox17.Name = "textBox17";
+            this.textBox17.Size = new System.Drawing.Size(237, 22);
+            this.textBox17.TabIndex = 1;
+            // 
+            // textBox16
+            // 
+            this.textBox16.Location = new System.Drawing.Point(51, 340);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.Size = new System.Drawing.Size(235, 22);
+            this.textBox16.TabIndex = 1;
+            // 
+            // textBox15
+            // 
+            this.textBox15.Location = new System.Drawing.Point(0, 340);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(52, 22);
+            this.textBox15.TabIndex = 1;
             // 
             // groupBox1
             // 
@@ -1068,48 +1112,6 @@
             this.button4.Text = "Thêm";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // textBox28
-            // 
-            this.textBox28.Location = new System.Drawing.Point(751, 295);
-            this.textBox28.Name = "textBox28";
-            this.textBox28.Size = new System.Drawing.Size(237, 22);
-            this.textBox28.TabIndex = 1;
-            // 
-            // textBox19
-            // 
-            this.textBox19.Location = new System.Drawing.Point(984, 295);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(237, 22);
-            this.textBox19.TabIndex = 1;
-            // 
-            // textBox18
-            // 
-            this.textBox18.Location = new System.Drawing.Point(517, 295);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(235, 22);
-            this.textBox18.TabIndex = 1;
-            // 
-            // textBox17
-            // 
-            this.textBox17.Location = new System.Drawing.Point(286, 295);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(231, 22);
-            this.textBox17.TabIndex = 1;
-            // 
-            // textBox16
-            // 
-            this.textBox16.Location = new System.Drawing.Point(52, 295);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(234, 22);
-            this.textBox16.TabIndex = 1;
-            // 
-            // textBox15
-            // 
-            this.textBox15.Location = new System.Drawing.Point(0, 295);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(52, 22);
-            this.textBox15.TabIndex = 1;
-            // 
             // dataGridView6
             // 
             this.dataGridView6.AllowUserToAddRows = false;
@@ -1165,12 +1167,11 @@
             this.tabPage6.Controls.Add(this.textBox26);
             this.tabPage6.Controls.Add(this.textBox24);
             this.tabPage6.Controls.Add(this.button9);
-            this.tabPage6.Controls.Add(this.button8);
             this.tabPage6.Controls.Add(this.dataGridView7);
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1221, 518);
+            this.tabPage6.Size = new System.Drawing.Size(1235, 528);
             this.tabPage6.TabIndex = 6;
             this.tabPage6.Text = "Thu chi và công nợ";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -1212,15 +1213,6 @@
             this.button9.Text = "Lập phiếu chi";
             this.button9.UseVisualStyleBackColor = true;
             // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(983, 43);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(102, 23);
-            this.button8.TabIndex = 2;
-            this.button8.Text = "Lập phiếu thu";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
             // dataGridView7
             // 
             this.dataGridView7.AllowUserToAddRows = false;
@@ -1260,17 +1252,69 @@
             this.tabPage7.Location = new System.Drawing.Point(4, 25);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(1221, 518);
+            this.tabPage7.Size = new System.Drawing.Size(1235, 528);
             this.tabPage7.TabIndex = 7;
             this.tabPage7.Text = "Thống kê";
             this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.xuiButton2);
+            this.panel2.Controls.Add(this.xuiButton1);
+            this.panel2.Location = new System.Drawing.Point(1143, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(100, 38);
+            this.panel2.TabIndex = 8;
+            // 
+            // xuiButton1
+            // 
+            this.xuiButton1.BackgroundColor = System.Drawing.Color.Transparent;
+            this.xuiButton1.ButtonImage = ((System.Drawing.Image)(resources.GetObject("xuiButton1.ButtonImage")));
+            this.xuiButton1.ButtonStyle = XanderUI.XUIButton.Style.MaterialRounded;
+            this.xuiButton1.ButtonText = "";
+            this.xuiButton1.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
+            this.xuiButton1.ClickTextColor = System.Drawing.Color.DodgerBlue;
+            this.xuiButton1.CornerRadius = 5;
+            this.xuiButton1.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.xuiButton1.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.xuiButton1.HoverTextColor = System.Drawing.Color.DodgerBlue;
+            this.xuiButton1.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.xuiButton1.Location = new System.Drawing.Point(65, 3);
+            this.xuiButton1.Name = "xuiButton1";
+            this.xuiButton1.Size = new System.Drawing.Size(34, 34);
+            this.xuiButton1.TabIndex = 9;
+            this.xuiButton1.TextColor = System.Drawing.Color.DodgerBlue;
+            this.xuiButton1.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.xuiButton1.Click += new System.EventHandler(this.xuiButton1_Click);
+            // 
+            // xuiButton2
+            // 
+            this.xuiButton2.BackgroundColor = System.Drawing.Color.Transparent;
+            this.xuiButton2.ButtonImage = ((System.Drawing.Image)(resources.GetObject("xuiButton2.ButtonImage")));
+            this.xuiButton2.ButtonStyle = XanderUI.XUIButton.Style.MaterialRounded;
+            this.xuiButton2.ButtonText = "";
+            this.xuiButton2.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
+            this.xuiButton2.ClickTextColor = System.Drawing.Color.DodgerBlue;
+            this.xuiButton2.CornerRadius = 5;
+            this.xuiButton2.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.xuiButton2.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.xuiButton2.HoverTextColor = System.Drawing.Color.DodgerBlue;
+            this.xuiButton2.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.xuiButton2.Location = new System.Drawing.Point(16, 3);
+            this.xuiButton2.Name = "xuiButton2";
+            this.xuiButton2.Size = new System.Drawing.Size(34, 34);
+            this.xuiButton2.TabIndex = 9;
+            this.xuiButton2.TextColor = System.Drawing.Color.DodgerBlue;
+            this.xuiButton2.Vertical_Alignment = System.Drawing.StringAlignment.Center;
             // 
             // Main_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1243, 681);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -1309,12 +1353,12 @@
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.ToolStrip toolStrip2;
@@ -1409,7 +1453,6 @@
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
         private System.Windows.Forms.DataGridView dataGridView7;
         private System.Windows.Forms.TextBox textBox25;
         private System.Windows.Forms.TextBox textBox26;
@@ -1435,5 +1478,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column25;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column28;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column24;
+        private System.Windows.Forms.Panel panel2;
+        private XanderUI.XUIButton xuiButton1;
+        private XanderUI.XUIButton xuiButton2;
     }
 }
