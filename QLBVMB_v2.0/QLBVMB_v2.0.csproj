@@ -114,15 +114,18 @@
     <Compile Include="Main_Form.Designer.cs">
       <DependentUpon>Main_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\ChucVuLogin.cs" />
     <Compile Include="Models\CHUYENBAY.cs" />
     <Compile Include="Models\CTHD.cs" />
     <Compile Include="Models\DB_BanVeMayBay.cs" />
     <Compile Include="Models\Ghe.cs" />
+    <Compile Include="Models\HANGHANGKHONG.cs" />
     <Compile Include="Models\HOADON.cs" />
     <Compile Include="Models\KHACHHANG.cs" />
     <Compile Include="Models\KHUYENMAI.cs" />
     <Compile Include="Models\MAYBAY.cs" />
     <Compile Include="Models\NHANVIEN.cs" />
+    <Compile Include="Models\PhieuChi.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\SANBAY.cs" />
     <Compile Include="Models\Ve.cs" />

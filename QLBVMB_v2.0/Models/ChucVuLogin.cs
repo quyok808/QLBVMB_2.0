@@ -6,32 +6,23 @@ namespace QLBVMB_v2._0.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("KHACHHANG")]
-    public partial class KHACHHANG
+    [Table("ChucVuLogin")]
+    public partial class ChucVuLogin
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public KHACHHANG()
+        public ChucVuLogin()
         {
-            Ves = new HashSet<Ve>();
+            Roles = new HashSet<Role>();
         }
 
         [Key]
-        public int MaKH { get; set; }
-
         [StringLength(10)]
-        public string TenKH { get; set; }
+        public string MaChucVu { get; set; }
 
-        [Required]
-        [StringLength(50)]
-        public string email { get; set; }
-
-        public DateTime? NgaySinh { get; set; }
-
-        [Required]
-        [StringLength(13)]
-        public string SoCCCD { get; set; }
+        [StringLength(250)]
+        public string LoaiChucVu { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Ve> Ves { get; set; }
+        public virtual ICollection<Role> Roles { get; set; }
     }
 }

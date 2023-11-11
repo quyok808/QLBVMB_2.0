@@ -6,20 +6,20 @@ namespace QLBVMB_v2._0.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Role")]
-    public partial class Role
+    [Table("PhieuChi")]
+    public partial class PhieuChi
     {
         [Key]
         [StringLength(10)]
-        public string username { get; set; }
+        public string MaPhieuChi { get; set; }
+
+        public DateTime? NgayLap { get; set; }
 
         [StringLength(10)]
-        public string password { get; set; }
+        public string MaNV { get; set; }
 
-        [StringLength(10)]
-        public string machucvu { get; set; }
-
-        public virtual ChucVuLogin ChucVuLogin { get; set; }
+        [StringLength(250)]
+        public string LoaiNghiepVu { get; set; }
 
         public virtual NHANVIEN NHANVIEN { get; set; }
     }
