@@ -31,5 +31,10 @@ namespace QLBVMB_v2._0
         {
 
         }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
