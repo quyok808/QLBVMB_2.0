@@ -12,20 +12,27 @@ namespace QLBVMB_v2._0.Models
         {
         }
 
+        public virtual DbSet<ChucVuLogin> ChucVuLogins { get; set; }
         public virtual DbSet<CHUYENBAY> CHUYENBAYs { get; set; }
         public virtual DbSet<CTHD> CTHDs { get; set; }
         public virtual DbSet<Ghe> Ghes { get; set; }
+        public virtual DbSet<HANGHANGKHONG> HANGHANGKHONGs { get; set; }
         public virtual DbSet<HOADON> HOADONs { get; set; }
         public virtual DbSet<KHACHHANG> KHACHHANGs { get; set; }
         public virtual DbSet<KHUYENMAI> KHUYENMAIs { get; set; }
         public virtual DbSet<MAYBAY> MAYBAYs { get; set; }
         public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
+        public virtual DbSet<PhieuChi> PhieuChis { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<SANBAY> SANBAYs { get; set; }
         public virtual DbSet<Ve> Ves { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<ChucVuLogin>()
+                .Property(e => e.MaChucVu)
+                .IsFixedLength();
+
             modelBuilder.Entity<CHUYENBAY>()
                 .Property(e => e.MaCB)
                 .IsFixedLength();
@@ -56,8 +63,20 @@ namespace QLBVMB_v2._0.Models
                 .WithRequired(e => e.Ghe)
                 .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<HANGHANGKHONG>()
+                .Property(e => e.Iatahang)
+                .IsFixedLength();
+
+            modelBuilder.Entity<HANGHANGKHONG>()
+                .Property(e => e.Icaohang)
+                .IsFixedLength();
+
             modelBuilder.Entity<HOADON>()
                 .Property(e => e.MaKM)
+                .IsFixedLength();
+
+            modelBuilder.Entity<HOADON>()
+                .Property(e => e.MaNV)
                 .IsFixedLength();
 
             modelBuilder.Entity<HOADON>()
@@ -70,15 +89,21 @@ namespace QLBVMB_v2._0.Models
                 .IsFixedLength();
 
             modelBuilder.Entity<KHACHHANG>()
-                .Property(e => e.CCCD)
-                .IsFixedLength();
+                .Property(e => e.email)
+                .IsFixedLength()
+                .IsUnicode(false);
 
             modelBuilder.Entity<KHACHHANG>()
-                .Property(e => e.MaVe)
-                .IsFixedLength();
+                .Property(e => e.SoCCCD)
+                .IsFixedLength()
+                .IsUnicode(false);
 
             modelBuilder.Entity<KHUYENMAI>()
                 .Property(e => e.MaKM)
+                .IsFixedLength();
+
+            modelBuilder.Entity<MAYBAY>()
+                .Property(e => e.Iatahang)
                 .IsFixedLength();
 
             modelBuilder.Entity<MAYBAY>()
@@ -96,25 +121,49 @@ namespace QLBVMB_v2._0.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<NHANVIEN>()
-                .HasMany(e => e.Roles)
-                .WithRequired(e => e.NHANVIEN)
-                .HasForeignKey(e => e.Username)
-                .WillCascadeOnDelete(false);
+                .Property(e => e.Email)
+                .IsFixedLength()
+                .IsUnicode(false);
 
-            modelBuilder.Entity<Role>()
-                .Property(e => e.Username)
+            modelBuilder.Entity<NHANVIEN>()
+                .Property(e => e.SoCCCD)
+                .IsFixedLength()
+                .IsUnicode(false);
+
+            modelBuilder.Entity<NHANVIEN>()
+                .HasOptional(e => e.Role)
+                .WithRequired(e => e.NHANVIEN);
+
+            modelBuilder.Entity<PhieuChi>()
+                .Property(e => e.MaPhieuChi)
+                .IsFixedLength();
+
+            modelBuilder.Entity<PhieuChi>()
+                .Property(e => e.MaNV)
                 .IsFixedLength();
 
             modelBuilder.Entity<Role>()
-                .Property(e => e.Password)
+                .Property(e => e.username)
                 .IsFixedLength();
 
             modelBuilder.Entity<Role>()
-                .Property(e => e.RoleName)
+                .Property(e => e.password)
+                .IsFixedLength();
+
+            modelBuilder.Entity<Role>()
+                .Property(e => e.machucvu)
                 .IsFixedLength();
 
             modelBuilder.Entity<SANBAY>()
                 .Property(e => e.MaSB)
+                .IsFixedLength();
+
+            modelBuilder.Entity<SANBAY>()
+                .Property(e => e.IcaoSB)
+                .IsFixedLength();
+
+            modelBuilder.Entity<SANBAY>()
+                .Property(e => e.Iatahang)
                 .IsFixedLength();
 
             modelBuilder.Entity<SANBAY>()
@@ -143,11 +192,6 @@ namespace QLBVMB_v2._0.Models
 
             modelBuilder.Entity<Ve>()
                 .HasMany(e => e.CTHDs)
-                .WithRequired(e => e.Ve)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Ve>()
-                .HasMany(e => e.KHACHHANGs)
                 .WithRequired(e => e.Ve)
                 .WillCascadeOnDelete(false);
         }

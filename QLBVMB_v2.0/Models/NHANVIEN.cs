@@ -12,7 +12,8 @@ namespace QLBVMB_v2._0.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public NHANVIEN()
         {
-            Roles = new HashSet<Role>();
+            HOADONs = new HashSet<HOADON>();
+            PhieuChis = new HashSet<PhieuChi>();
         }
 
         [Key]
@@ -37,7 +38,38 @@ namespace QLBVMB_v2._0.Models
 
         public int Luong { get; set; }
 
+        [StringLength(50)]
+        public string Dantoc { get; set; }
+
+        [StringLength(50)]
+        public string QuocTich { get; set; }
+
+        [StringLength(250)]
+        public string Email { get; set; }
+
+        [Required]
+        [StringLength(13)]
+        public string SoCCCD { get; set; }
+
+        [Required]
+        [StringLength(250)]
+        public string NoiCap { get; set; }
+
+        public DateTime NgayCap { get; set; }
+
+        [StringLength(250)]
+        public string GhiChu { get; set; }
+
+        public DateTime? NgayVaoLam { get; set; }
+
+        public DateTime? NgayNghiLam { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Role> Roles { get; set; }
+        public virtual ICollection<HOADON> HOADONs { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PhieuChi> PhieuChis { get; set; }
+
+        public virtual Role Role { get; set; }
     }
 }

@@ -22,7 +22,12 @@ namespace QLBVMB_v2._0.Models
         [StringLength(50)]
         public string LoaiMB { get; set; }
 
+        [StringLength(10)]
+        public string Iatahang { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHUYENBAY> CHUYENBAYs { get; set; }
+
+        public virtual HANGHANGKHONG HANGHANGKHONG { get; set; }
     }
 }

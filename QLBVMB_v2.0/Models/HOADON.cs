@@ -25,9 +25,14 @@ namespace QLBVMB_v2._0.Models
         [StringLength(10)]
         public string MaKM { get; set; }
 
+        [StringLength(10)]
+        public string MaNV { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTHD> CTHDs { get; set; }
 
         public virtual KHUYENMAI KHUYENMAI { get; set; }
+
+        public virtual NHANVIEN NHANVIEN { get; set; }
     }
 }
