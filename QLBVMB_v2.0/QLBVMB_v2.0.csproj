@@ -58,10 +58,10 @@
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="SunnyUI">
-      <HintPath>..\..\..\..\SunnyUI-master\SunnyUI.Demo\Bin\SunnyUI.dll</HintPath>
+      <HintPath>C:\Users\nguye\Downloads\Winform LT\SunnyUI-master\SunnyUI.Demo\Bin\SunnyUI.dll</HintPath>
     </Reference>
     <Reference Include="SunnyUI.Common">
-      <HintPath>..\..\..\..\SunnyUI-master\SunnyUI.Demo\Bin\SunnyUI.Common.dll</HintPath>
+      <HintPath>C:\Users\nguye\Downloads\Winform LT\SunnyUI-master\SunnyUI.Demo\Bin\SunnyUI.Common.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -80,7 +80,7 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="XanderUI">
-      <HintPath>..\..\..\..\XanderUIFramework Demo\XanderUIFramework Demo\XanderUIFramework Demo\bin\Debug\XanderUI.dll</HintPath>
+      <HintPath>C:\Users\nguye\Downloads\Winform LT\XanderUIFramework Demo\XanderUIFramework Demo\XanderUIFramework Demo\bin\Debug\XanderUI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
