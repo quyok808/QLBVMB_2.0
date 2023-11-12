@@ -1,4 +1,6 @@
 ﻿using QLBVMB_v2._0.Models;
+using Sunny.UI;
+using Sunny.UI.Win32;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -105,6 +107,7 @@ namespace QLBVMB_v2._0
             }
             else
             {
+                DTP_TrangChu_NgayVe.Value = DTP_TrangChu_NgayDi.Value.Tomorrow();
                 DTP_TrangChu_NgayVe.Visible = true;
                 lb_TrangChu_NgayVe.Visible = true;
             }
@@ -118,8 +121,33 @@ namespace QLBVMB_v2._0
 
         private void btn_TrangChu_Loc_Click(object sender, EventArgs e)
         {
-            List<CHUYENBAY> listCB = db.CHUYENBAYs.Where(p => p.NoiDi.Trim() == cmb_TrangChu_NoiDi.Text.Trim() || p.NoiDen.Trim() == cmb_TrangChu_NoiDen.Text.Trim() || p.GioKhoiHanh == DTP_TrangChu_NgayDi.Value).ToList();
-            Filldgv_TrangChu_ThongTinChuyenBay(listCB);
+            try
+            {
+                List<CHUYENBAY> listCB = new List<CHUYENBAY>();
+                List<CHUYENBAY> listTemp = db.CHUYENBAYs.Where(p => p.NoiDi.Trim() == cmb_TrangChu_NoiDi.Text.Trim() && p.NoiDen.Trim() == cmb_TrangChu_NoiDen.Text.Trim()).ToList();
+                foreach (var item in listTemp)
+                {
+                    TimeSpan time = item.GioKhoiHanh.Value.Subtract(DTP_TrangChu_NgayDi.Value);
+                    int Days = time.Days;
+                    if (Days == 0)
+                    {
+                        listCB.Add(item);
+                    }
+                }
+                if (listCB.Count > 0)
+                {
+                    Filldgv_TrangChu_ThongTinChuyenBay(listCB);
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy dữ liệu !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show("Không tìm thấy dữ liệu !","Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void Filldgv_TrangChu_ThongTinChuyenBay(List<CHUYENBAY> listCB)
@@ -129,9 +157,14 @@ namespace QLBVMB_v2._0
             {
                 int newRow = dgv_TrangChu_ThongTinChuyenBay.Rows.Add();
                 dgv_TrangChu_ThongTinChuyenBay.Rows[i].Cells[0].Value = listCB[i].MaCB.Trim();
-                dgv_TrangChu_ThongTinChuyenBay.Rows[i].Cells[1].Value = listCB[i].GioKhoiHanh.Value.ToShortTimeString();
-                dgv_TrangChu_ThongTinChuyenBay.Rows[i].Cells[2].Value = listCB[i].MAYBAY.HANGHANGKHONG.TenHang;
+                dgv_TrangChu_ThongTinChuyenBay.Rows[i].Cells[1].Value = listCB[i].GioKhoiHanh.Value.ToShortDateString();
+                dgv_TrangChu_ThongTinChuyenBay.Rows[i].Cells[2].Value = listCB[i].HANGHANGKHONG.TenHang;
             }
+        }
+
+        private void DTP_TrangChu_NgayDi_ValueChanged(object sender, EventArgs e)
+        {
+            DTP_TrangChu_NgayVe.Value = DTP_TrangChu_NgayDi.Value.Tomorrow();
         }
     }
 }

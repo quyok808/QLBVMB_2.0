@@ -14,6 +14,7 @@ namespace QLBVMB_v2._0.Models
 
         public virtual DbSet<ChucVuLogin> ChucVuLogins { get; set; }
         public virtual DbSet<CHUYENBAY> CHUYENBAYs { get; set; }
+        public virtual DbSet<CT_MAYBAY_HANGHANGKHONG> CT_MAYBAY_HANGHANGKHONG { get; set; }
         public virtual DbSet<CTHD> CTHDs { get; set; }
         public virtual DbSet<Ghe> Ghes { get; set; }
         public virtual DbSet<HANGHANGKHONG> HANGHANGKHONGs { get; set; }
@@ -46,9 +47,29 @@ namespace QLBVMB_v2._0.Models
                 .IsFixedLength();
 
             modelBuilder.Entity<CHUYENBAY>()
+                .Property(e => e.MaMB)
+                .IsFixedLength();
+
+            modelBuilder.Entity<CHUYENBAY>()
+                .Property(e => e.Iatahang)
+                .IsFixedLength();
+
+            modelBuilder.Entity<CHUYENBAY>()
                 .HasMany(e => e.Ves)
                 .WithRequired(e => e.CHUYENBAY)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<CT_MAYBAY_HANGHANGKHONG>()
+                .Property(e => e.MaMB)
+                .IsFixedLength();
+
+            modelBuilder.Entity<CT_MAYBAY_HANGHANGKHONG>()
+                .Property(e => e.Iatahang)
+                .IsFixedLength();
+
+            modelBuilder.Entity<CT_MAYBAY_HANGHANGKHONG>()
+                .Property(e => e.SoLuong)
+                .IsFixedLength();
 
             modelBuilder.Entity<CTHD>()
                 .Property(e => e.MaVe)
@@ -70,6 +91,16 @@ namespace QLBVMB_v2._0.Models
             modelBuilder.Entity<HANGHANGKHONG>()
                 .Property(e => e.Icaohang)
                 .IsFixedLength();
+
+            modelBuilder.Entity<HANGHANGKHONG>()
+                .HasMany(e => e.CHUYENBAYs)
+                .WithRequired(e => e.HANGHANGKHONG)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<HANGHANGKHONG>()
+                .HasMany(e => e.CT_MAYBAY_HANGHANGKHONG)
+                .WithRequired(e => e.HANGHANGKHONG)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<HOADON>()
                 .Property(e => e.MaKM)
@@ -103,11 +134,16 @@ namespace QLBVMB_v2._0.Models
                 .IsFixedLength();
 
             modelBuilder.Entity<MAYBAY>()
-                .Property(e => e.Iatahang)
+                .Property(e => e.MaMB)
                 .IsFixedLength();
 
             modelBuilder.Entity<MAYBAY>()
                 .HasMany(e => e.CHUYENBAYs)
+                .WithRequired(e => e.MAYBAY)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<MAYBAY>()
+                .HasMany(e => e.CT_MAYBAY_HANGHANGKHONG)
                 .WithRequired(e => e.MAYBAY)
                 .WillCascadeOnDelete(false);
 
@@ -163,19 +199,15 @@ namespace QLBVMB_v2._0.Models
                 .IsFixedLength();
 
             modelBuilder.Entity<SANBAY>()
-                .Property(e => e.Iatahang)
-                .IsFixedLength();
-
-            modelBuilder.Entity<SANBAY>()
                 .HasMany(e => e.CHUYENBAYs)
                 .WithRequired(e => e.SANBAY)
-                .HasForeignKey(e => e.MaSBDi)
+                .HasForeignKey(e => e.MaSBDen)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<SANBAY>()
                 .HasMany(e => e.CHUYENBAYs1)
                 .WithRequired(e => e.SANBAY1)
-                .HasForeignKey(e => e.MaSBDen)
+                .HasForeignKey(e => e.MaSBDi)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Ve>()

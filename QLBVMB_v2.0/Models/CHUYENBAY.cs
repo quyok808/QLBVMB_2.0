@@ -37,7 +37,15 @@ namespace QLBVMB_v2._0.Models
         [StringLength(3)]
         public string MaSBDen { get; set; }
 
-        public int MaMB { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string MaMB { get; set; }
+
+        [Required]
+        [StringLength(10)]
+        public string Iatahang { get; set; }
+
+        public virtual HANGHANGKHONG HANGHANGKHONG { get; set; }
 
         public virtual MAYBAY MAYBAY { get; set; }
 

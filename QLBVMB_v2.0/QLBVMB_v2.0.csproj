@@ -117,6 +117,7 @@
     <Compile Include="Models\ChucVuLogin.cs" />
     <Compile Include="Models\CHUYENBAY.cs" />
     <Compile Include="Models\CTHD.cs" />
+    <Compile Include="Models\CT_MAYBAY_HANGHANGKHONG.cs" />
     <Compile Include="Models\DB_BanVeMayBay.cs" />
     <Compile Include="Models\Ghe.cs" />
     <Compile Include="Models\HANGHANGKHONG.cs" />

@@ -13,21 +13,20 @@ namespace QLBVMB_v2._0.Models
         public MAYBAY()
         {
             CHUYENBAYs = new HashSet<CHUYENBAY>();
+            CT_MAYBAY_HANGHANGKHONG = new HashSet<CT_MAYBAY_HANGHANGKHONG>();
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int MaMB { get; set; }
+        [StringLength(50)]
+        public string MaMB { get; set; }
 
         [StringLength(50)]
         public string LoaiMB { get; set; }
 
-        [StringLength(10)]
-        public string Iatahang { get; set; }
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHUYENBAY> CHUYENBAYs { get; set; }
 
-        public virtual HANGHANGKHONG HANGHANGKHONG { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CT_MAYBAY_HANGHANGKHONG> CT_MAYBAY_HANGHANGKHONG { get; set; }
     }
 }

@@ -12,8 +12,8 @@ namespace QLBVMB_v2._0.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public HANGHANGKHONG()
         {
-            MAYBAYs = new HashSet<MAYBAY>();
-            SANBAYs = new HashSet<SANBAY>();
+            CHUYENBAYs = new HashSet<CHUYENBAY>();
+            CT_MAYBAY_HANGHANGKHONG = new HashSet<CT_MAYBAY_HANGHANGKHONG>();
         }
 
         [Key]
@@ -36,9 +36,9 @@ namespace QLBVMB_v2._0.Models
         public int? SoDiemDen { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MAYBAY> MAYBAYs { get; set; }
+        public virtual ICollection<CHUYENBAY> CHUYENBAYs { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SANBAY> SANBAYs { get; set; }
+        public virtual ICollection<CT_MAYBAY_HANGHANGKHONG> CT_MAYBAY_HANGHANGKHONG { get; set; }
     }
 }
