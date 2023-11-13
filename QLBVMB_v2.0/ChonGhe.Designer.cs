@@ -28,17 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChonGhe));
             this.panel_Show = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel_Show.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_Show
@@ -53,16 +52,34 @@
             this.panel_Show.Size = new System.Drawing.Size(459, 549);
             this.panel_Show.TabIndex = 3;
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.pictureBox4);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 322);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(459, 227);
+            this.panel4.TabIndex = 2;
+            // 
             // pictureBox4
             // 
             this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(-142, 3);
+            this.pictureBox4.Image = global::QLBVMB_v2._0.Properties.Resources.Duoi_MB;
+            this.pictureBox4.Location = new System.Drawing.Point(-161, 3);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(753, 223);
+            this.pictureBox4.Size = new System.Drawing.Size(781, 223);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.pictureBox1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(459, 102);
+            this.panel3.TabIndex = 1;
             // 
             // pictureBox1
             // 
@@ -74,24 +91,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.pictureBox4);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 322);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(459, 227);
-            this.panel4.TabIndex = 2;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.pictureBox1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(459, 102);
-            this.panel3.TabIndex = 1;
             // 
             // ChonGhe
             // 
@@ -108,10 +107,10 @@
             this.Text = "ChonGhe";
             this.Load += new System.EventHandler(this.ChonGhe_Load);
             this.panel_Show.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

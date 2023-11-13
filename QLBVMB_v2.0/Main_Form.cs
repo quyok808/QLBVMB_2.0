@@ -170,20 +170,34 @@ namespace QLBVMB_v2._0
             }
         }
         #endregion
-
-        private void dgv_TrangChu_ThongTinChuyenBay_CellClick(object sender, DataGridViewCellEventArgs e)
+        #region Chọn ghế ngồi
+        private void dgv_TrangChu_ThongTinChuyenBay_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             txt_TrangChu_MaCB.Text = dgv_TrangChu_ThongTinChuyenBay.Rows[e.RowIndex].Cells[0].Value.ToString().Trim();
         }
-
+        
         private void txt_TrangChu_MaCB_TextChanged(object sender, EventArgs e)
         {
-            ChonGhe frm = new ChonGhe(txt_TrangChu_MaCB.Text.Trim());
-            frm.TopLevel = false;
-            panel_ChonGhe.Controls.Add(frm);
-            frm.Dock = DockStyle.Fill;
-            frm.Show();
+            if (txt_TrangChu_MaCB.Text != "")
+            {
+                List<Ve> listVe1 = db.Ves.Where(p => p.MaCB.Trim() == txt_TrangChu_MaCB.Text.Trim()).ToList();
+                if (listVe1.Count > 0)
+                {
+                    ChonGhe frm = new ChonGhe(listVe1);
+                    frm.TopLevel = false;
+                    panel_ChonGhe.Controls.Add(frm);
+                    frm.Dock = DockStyle.Fill;
+                    frm.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Chuyến bay này chưa có vé !!!", "Thông báo", MessageBoxButtons.OK);
+                    txt_TrangChu_MaCB.Text = "";
+                    panel_ChonGhe.Controls.Clear();
+                }
+            }
         }
+        #endregion
         #endregion
     }
 }
