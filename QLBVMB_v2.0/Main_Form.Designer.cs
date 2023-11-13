@@ -78,6 +78,9 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dgv_TrangChu_ThongTinChuyenBay = new System.Windows.Forms.DataGridView();
+            this.Column27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmb_TrangChu_NoiDen = new System.Windows.Forms.ComboBox();
             this.cmb_TrangChu_NoiDi = new System.Windows.Forms.ComboBox();
             this.btn_TrangChu_Loc = new System.Windows.Forms.Button();
@@ -158,9 +161,6 @@
             this.xuiButton1 = new XanderUI.XUIButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Column27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.toolStrip2.SuspendLayout();
@@ -197,7 +197,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 38);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1241, 540);
+            this.tabPage4.Size = new System.Drawing.Size(1239, 541);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Quản lí nhân viên";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -311,7 +311,7 @@
             this.toolStripButton7});
             this.toolStrip2.Location = new System.Drawing.Point(3, 3);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(1235, 27);
+            this.toolStrip2.Size = new System.Drawing.Size(1233, 27);
             this.toolStrip2.TabIndex = 1;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -328,7 +328,7 @@
             this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
             this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(59, 28);
+            this.toolStripButton7.Size = new System.Drawing.Size(59, 24);
             this.toolStripButton7.Text = "Lịch";
             // 
             // tabPage2
@@ -346,7 +346,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 38);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1241, 540);
+            this.tabPage2.Size = new System.Drawing.Size(1239, 541);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Quản lí chuyến bay";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -497,7 +497,7 @@
             this.TS_QLCB_LichBay});
             this.toolStrip1.Location = new System.Drawing.Point(3, 3);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1235, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(1233, 27);
             this.toolStrip1.TabIndex = 14;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -506,7 +506,7 @@
             this.TS_QLCB_Them.Image = ((System.Drawing.Image)(resources.GetObject("TS_QLCB_Them.Image")));
             this.TS_QLCB_Them.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.TS_QLCB_Them.Name = "TS_QLCB_Them";
-            this.TS_QLCB_Them.Size = new System.Drawing.Size(148, 28);
+            this.TS_QLCB_Them.Size = new System.Drawing.Size(148, 24);
             this.TS_QLCB_Them.Text = "Thêm chuyến bay";
             // 
             // TS_QLCB_Xoa
@@ -514,7 +514,7 @@
             this.TS_QLCB_Xoa.Image = ((System.Drawing.Image)(resources.GetObject("TS_QLCB_Xoa.Image")));
             this.TS_QLCB_Xoa.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.TS_QLCB_Xoa.Name = "TS_QLCB_Xoa";
-            this.TS_QLCB_Xoa.Size = new System.Drawing.Size(137, 28);
+            this.TS_QLCB_Xoa.Size = new System.Drawing.Size(137, 24);
             this.TS_QLCB_Xoa.Text = "Xoá chuyến bay";
             // 
             // TS_QLCB_Update
@@ -522,7 +522,7 @@
             this.TS_QLCB_Update.Image = ((System.Drawing.Image)(resources.GetObject("TS_QLCB_Update.Image")));
             this.TS_QLCB_Update.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.TS_QLCB_Update.Name = "TS_QLCB_Update";
-            this.TS_QLCB_Update.Size = new System.Drawing.Size(92, 28);
+            this.TS_QLCB_Update.Size = new System.Drawing.Size(92, 24);
             this.TS_QLCB_Update.Text = "Cập nhật";
             // 
             // TS_QLCB_LichBay
@@ -530,7 +530,7 @@
             this.TS_QLCB_LichBay.Image = ((System.Drawing.Image)(resources.GetObject("TS_QLCB_LichBay.Image")));
             this.TS_QLCB_LichBay.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.TS_QLCB_LichBay.Name = "TS_QLCB_LichBay";
-            this.TS_QLCB_LichBay.Size = new System.Drawing.Size(87, 28);
+            this.TS_QLCB_LichBay.Size = new System.Drawing.Size(87, 24);
             this.TS_QLCB_LichBay.Text = "Lịch bay";
             // 
             // tabPage1
@@ -580,6 +580,7 @@
             this.txt_TrangChu_MaCB.ReadOnly = true;
             this.txt_TrangChu_MaCB.Size = new System.Drawing.Size(100, 35);
             this.txt_TrangChu_MaCB.TabIndex = 25;
+            this.txt_TrangChu_MaCB.TextChanged += new System.EventHandler(this.txt_TrangChu_MaCB_TextChanged);
             // 
             // textBox1
             // 
@@ -633,7 +634,6 @@
             this.dgv_TrangChu_ThongTinChuyenBay.ReadOnly = true;
             this.dgv_TrangChu_ThongTinChuyenBay.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Empty;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("#9Slide03 Arima Madurai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -646,6 +646,28 @@
             this.dgv_TrangChu_ThongTinChuyenBay.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_TrangChu_ThongTinChuyenBay.Size = new System.Drawing.Size(440, 295);
             this.dgv_TrangChu_ThongTinChuyenBay.TabIndex = 23;
+            this.dgv_TrangChu_ThongTinChuyenBay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_TrangChu_ThongTinChuyenBay_CellClick);
+            // 
+            // Column27
+            // 
+            this.Column27.HeaderText = "Mã chuyến bay";
+            this.Column27.MinimumWidth = 6;
+            this.Column27.Name = "Column27";
+            this.Column27.ReadOnly = true;
+            // 
+            // Column33
+            // 
+            this.Column33.HeaderText = "Giờ khởi hành ";
+            this.Column33.MinimumWidth = 6;
+            this.Column33.Name = "Column33";
+            this.Column33.ReadOnly = true;
+            // 
+            // Column34
+            // 
+            this.Column34.HeaderText = "Hãng hàng không";
+            this.Column34.MinimumWidth = 6;
+            this.Column34.Name = "Column34";
+            this.Column34.ReadOnly = true;
             // 
             // cmb_TrangChu_NoiDen
             // 
@@ -700,6 +722,7 @@
             this.DTP_TrangChu_NgayVe.Name = "DTP_TrangChu_NgayVe";
             this.DTP_TrangChu_NgayVe.Size = new System.Drawing.Size(217, 35);
             this.DTP_TrangChu_NgayVe.TabIndex = 17;
+            this.DTP_TrangChu_NgayVe.ValueChanged += new System.EventHandler(this.DTP_TrangChu_NgayVe_ValueChanged);
             // 
             // DTP_TrangChu_NgayDi
             // 
@@ -909,7 +932,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 38);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1241, 540);
+            this.tabPage3.Size = new System.Drawing.Size(1239, 541);
             this.tabPage3.TabIndex = 4;
             this.tabPage3.Text = "Quản lí khách hàng";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1000,7 +1023,7 @@
             this.toolStripButton10});
             this.toolStrip3.Location = new System.Drawing.Point(3, 3);
             this.toolStrip3.Name = "toolStrip3";
-            this.toolStrip3.Size = new System.Drawing.Size(1235, 27);
+            this.toolStrip3.Size = new System.Drawing.Size(1233, 27);
             this.toolStrip3.TabIndex = 0;
             this.toolStrip3.Text = "toolStrip3";
             // 
@@ -1009,7 +1032,7 @@
             this.toolStripButton9.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton9.Image")));
             this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton9.Name = "toolStripButton9";
-            this.toolStripButton9.Size = new System.Drawing.Size(90, 28);
+            this.toolStripButton9.Size = new System.Drawing.Size(90, 24);
             this.toolStripButton9.Text = "Xoá_Sửa";
             // 
             // toolStripButton10
@@ -1017,7 +1040,7 @@
             this.toolStripButton10.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton10.Image")));
             this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton10.Name = "toolStripButton10";
-            this.toolStripButton10.Size = new System.Drawing.Size(70, 28);
+            this.toolStripButton10.Size = new System.Drawing.Size(70, 24);
             this.toolStripButton10.Text = "Thêm";
             // 
             // tabPage5
@@ -1037,7 +1060,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 38);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1241, 540);
+            this.tabPage5.Size = new System.Drawing.Size(1239, 541);
             this.tabPage5.TabIndex = 5;
             this.tabPage5.Text = "Quản lí khuyến mãi";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1262,7 +1285,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 38);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1241, 540);
+            this.tabPage6.Size = new System.Drawing.Size(1239, 541);
             this.tabPage6.TabIndex = 6;
             this.tabPage6.Text = "Thu chi và công nợ";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -1343,7 +1366,7 @@
             this.tabPage7.Location = new System.Drawing.Point(4, 38);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(1241, 540);
+            this.tabPage7.Size = new System.Drawing.Size(1239, 541);
             this.tabPage7.TabIndex = 7;
             this.tabPage7.Text = "Thống kê";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -1421,27 +1444,6 @@
             this.panel1.Size = new System.Drawing.Size(1249, 585);
             this.panel1.TabIndex = 27;
             // 
-            // Column27
-            // 
-            this.Column27.HeaderText = "Mã chuyến bay";
-            this.Column27.MinimumWidth = 6;
-            this.Column27.Name = "Column27";
-            this.Column27.ReadOnly = true;
-            // 
-            // Column33
-            // 
-            this.Column33.HeaderText = "Giờ khởi hành ";
-            this.Column33.MinimumWidth = 6;
-            this.Column33.Name = "Column33";
-            this.Column33.ReadOnly = true;
-            // 
-            // Column34
-            // 
-            this.Column34.HeaderText = "Hãng hàng không";
-            this.Column34.MinimumWidth = 6;
-            this.Column34.Name = "Column34";
-            this.Column34.ReadOnly = true;
-            // 
             // Main_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -1456,7 +1458,6 @@
             this.MaximizeBox = false;
             this.Name = "Main_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_Form_FormClosed);
             this.Load += new System.EventHandler(this.Main_Form_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Main_Form_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Main_Form_MouseMove);

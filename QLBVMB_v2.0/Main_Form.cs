@@ -16,6 +16,7 @@ namespace QLBVMB_v2._0
 {
     public partial class Main_Form : Form
     {
+        #region Các biến
         DB_BanVeMayBay db = new DB_BanVeMayBay();
         List<string> listNoiDi = new List<string>()
         {
@@ -33,37 +34,20 @@ namespace QLBVMB_v2._0
             "Kiên Giang",
             "Đồng Nai"
         };
+        #endregion
         public Main_Form()
         {
             InitializeComponent();
         }
-
-        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void Main_Form_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
         private void Main_Form_Load(object sender, EventArgs e)
         {
-            //ChonGhe frm = new ChonGhe();
-            //frm.TopLevel = false;
-            ////panel_Show.Controls.Add(frm);
-            //frm.Dock = DockStyle.Fill;
-            //frm.Show();
-
+            List<CHUYENBAY> listCB = db.CHUYENBAYs.ToList();
             rd_TrangChu_1chieu.Checked = true;
+            DTP_QLCB_NgayDi.Value = DateTime.Now.Date;
             DTP_TrangChu_NgayVe.Visible = false;
             lb_TrangChu_NgayVe.Visible = false;
-            Fillcmb_TrangChu_NoiDi(listNoiDi);
-        }
-
-        private void Fillcmb_TrangChu_NoiDi(List<string> listNoiDi)
-        {
             cmb_TrangChu_NoiDi.DataSource = listNoiDi;
+            Filldgv_TrangChu_ThongTinChuyenBay(listCB);
         }
 
         #region Form move
@@ -87,7 +71,7 @@ namespace QLBVMB_v2._0
         }
 
         #endregion
-
+        #region Form controls
         private void xuiButton1_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -97,7 +81,63 @@ namespace QLBVMB_v2._0
         {
             WindowState = FormWindowState.Minimized;
         }
+        #endregion
+        #region Button Lọc
+        private void btn_TrangChu_Loc_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (rd_TrangChu_1chieu.Checked)
+                    {
+                        #region fill listCB 1 chiều
+                        List<CHUYENBAY> listCB = new List<CHUYENBAY>();
+                        List<CHUYENBAY> listTemp = db.CHUYENBAYs.Where(p => p.NoiDi.Trim() == cmb_TrangChu_NoiDi.Text.Trim() && p.NoiDen.Trim() == cmb_TrangChu_NoiDen.Text.Trim()).ToList();
+                        foreach (var item in listTemp)
+                        {
+                            TimeSpan time = item.GioKhoiHanh.Value.Subtract(DTP_TrangChu_NgayDi.Value);
+                            int Days = time.Days;
+                            if (Days == 0)
+                            {
+                                listCB.Add(item);
+                            }
+                        }
+                        if (listCB.Count > 0)
+                        {
+                            Filldgv_TrangChu_ThongTinChuyenBay(listCB);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không tìm thấy dữ liệu !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        #endregion
+                    }
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show("Không tìm thấy dữ liệu !","Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
 
+        private void Filldgv_TrangChu_ThongTinChuyenBay(List<CHUYENBAY> listCB)
+        {
+            dgv_TrangChu_ThongTinChuyenBay.Rows.Clear();
+            for (int i = 0; i <  listCB.Count; i++)
+            {
+                int newRow = dgv_TrangChu_ThongTinChuyenBay.Rows.Add();
+                dgv_TrangChu_ThongTinChuyenBay.Rows[i].Cells[0].Value = listCB[i].MaCB.Trim();
+                dgv_TrangChu_ThongTinChuyenBay.Rows[i].Cells[1].Value = listCB[i].GioKhoiHanh.Value.ToString("HH:mm");
+                dgv_TrangChu_ThongTinChuyenBay.Rows[i].Cells[2].Value = listCB[i].HANGHANGKHONG.TenHang;
+            }
+        }
+        #endregion
+        #region fill cmb nơi đến
+        private void cmb_TrangChu_NoiDi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<string> listNoiDen = listNoiDi.Where(p => p != cmb_TrangChu_NoiDi.Text.Trim()).ToList();
+            cmb_TrangChu_NoiDen.DataSource = listNoiDen;
+        }
+        #endregion
+        #region DateTimePicker Controls
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             if (rd_TrangChu_1chieu.Checked)
@@ -113,58 +153,42 @@ namespace QLBVMB_v2._0
             }
         }
 
-        private void cmb_TrangChu_NoiDi_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            List<string> listNoiDen = listNoiDi.Where(p => p != cmb_TrangChu_NoiDi.Text.Trim()).ToList();
-            cmb_TrangChu_NoiDen.DataSource = listNoiDen;
-        }
-
-        private void btn_TrangChu_Loc_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                List<CHUYENBAY> listCB = new List<CHUYENBAY>();
-                List<CHUYENBAY> listTemp = db.CHUYENBAYs.Where(p => p.NoiDi.Trim() == cmb_TrangChu_NoiDi.Text.Trim() && p.NoiDen.Trim() == cmb_TrangChu_NoiDen.Text.Trim()).ToList();
-                foreach (var item in listTemp)
-                {
-                    TimeSpan time = item.GioKhoiHanh.Value.Subtract(DTP_TrangChu_NgayDi.Value);
-                    int Days = time.Days;
-                    if (Days == 0)
-                    {
-                        listCB.Add(item);
-                    }
-                }
-                if (listCB.Count > 0)
-                {
-                    Filldgv_TrangChu_ThongTinChuyenBay(listCB);
-                }
-                else
-                {
-                    MessageBox.Show("Không tìm thấy dữ liệu !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                
-            }
-            catch (Exception ex) 
-            {
-                MessageBox.Show("Không tìm thấy dữ liệu !","Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
-        private void Filldgv_TrangChu_ThongTinChuyenBay(List<CHUYENBAY> listCB)
-        {
-            dgv_TrangChu_ThongTinChuyenBay.Rows.Clear();
-            for (int i = 0; i <  listCB.Count; i++)
-            {
-                int newRow = dgv_TrangChu_ThongTinChuyenBay.Rows.Add();
-                dgv_TrangChu_ThongTinChuyenBay.Rows[i].Cells[0].Value = listCB[i].MaCB.Trim();
-                dgv_TrangChu_ThongTinChuyenBay.Rows[i].Cells[1].Value = listCB[i].GioKhoiHanh.Value.ToShortDateString();
-                dgv_TrangChu_ThongTinChuyenBay.Rows[i].Cells[2].Value = listCB[i].HANGHANGKHONG.TenHang;
-            }
-        }
-
         private void DTP_TrangChu_NgayDi_ValueChanged(object sender, EventArgs e)
         {
             DTP_TrangChu_NgayVe.Value = DTP_TrangChu_NgayDi.Value.Tomorrow();
+            DateTime dt = DateTime.Now;
+            TimeSpan time = dt.Subtract(DTP_QLCB_NgayDi.Value);
+            int day = (int)time.TotalDays;
+            if (day < 0)
+            {
+                MessageBox.Show("Ngày đi không được ở trong quá khứ","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
+        }
+
+        private void DTP_TrangChu_NgayVe_ValueChanged(object sender, EventArgs e)
+        {
+            TimeSpan time = DTP_TrangChu_NgayVe.Value.Subtract(DTP_TrangChu_NgayDi.Value);
+            int minutes = (int)time.TotalMinutes;
+            if (minutes < 0)
+            {
+                MessageBox.Show("Ngày đi phải lớn hơn ngày về !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                DTP_TrangChu_NgayVe.Value = DTP_TrangChu_NgayDi.Value.Tomorrow();
+            }
+        }
+        #endregion
+
+        private void dgv_TrangChu_ThongTinChuyenBay_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txt_TrangChu_MaCB.Text = dgv_TrangChu_ThongTinChuyenBay.Rows[e.RowIndex].Cells[0].Value.ToString().Trim();
+        }
+
+        private void txt_TrangChu_MaCB_TextChanged(object sender, EventArgs e)
+        {
+            ChonGhe frm = new ChonGhe(txt_TrangChu_MaCB.Text.Trim());
+            frm.TopLevel = false;
+            panel_ChonGhe.Controls.Add(frm);
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
         }
     }
 }
