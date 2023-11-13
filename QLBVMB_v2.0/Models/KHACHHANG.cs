@@ -18,7 +18,7 @@ namespace QLBVMB_v2._0.Models
         [Key]
         public int MaKH { get; set; }
 
-        [StringLength(10)]
+        [StringLength(250)]
         public string TenKH { get; set; }
 
         [Required]

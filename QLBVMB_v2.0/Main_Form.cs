@@ -41,11 +41,12 @@ namespace QLBVMB_v2._0
         }
         private void Main_Form_Load(object sender, EventArgs e)
         {
-            List<CHUYENBAY> listCB = db.CHUYENBAYs.ToList();
             rd_TrangChu_1chieu.Checked = true;
             DTP_TrangChu_NgayVe.Visible = false;
             lb_TrangChu_NgayVe.Visible = false;
             cmb_TrangChu_NoiDi.DataSource = listNoiDi;
+            
+            List<CHUYENBAY> listCB = db.CHUYENBAYs.Where(p => DateTime.Compare(p.GioKhoiHanh.Value,DateTime.Now) > 0).ToList();
             Filldgv_TrangChu_ThongTinChuyenBay(listCB);
         }
 
@@ -126,8 +127,10 @@ namespace QLBVMB_v2._0
             {
                 int newRow = dgv_TrangChu_ThongTinChuyenBay.Rows.Add();
                 dgv_TrangChu_ThongTinChuyenBay.Rows[i].Cells[0].Value = listCB[i].MaCB.Trim();
-                dgv_TrangChu_ThongTinChuyenBay.Rows[i].Cells[1].Value = listCB[i].GioKhoiHanh.Value.ToString("HH:mm");
+                dgv_TrangChu_ThongTinChuyenBay.Rows[i].Cells[1].Value = listCB[i].GioKhoiHanh.Value.ToString("HH:mm | dd/MM/yyyy");
                 dgv_TrangChu_ThongTinChuyenBay.Rows[i].Cells[2].Value = listCB[i].HANGHANGKHONG.TenHang;
+                dgv_TrangChu_ThongTinChuyenBay.Rows[i].Cells[3].Value = listCB[i].NoiDi;
+                dgv_TrangChu_ThongTinChuyenBay.Rows[i].Cells[4].Value = listCB[i].NoiDen;
             }
         }
         #endregion
@@ -198,6 +201,14 @@ namespace QLBVMB_v2._0
             }
         }
         #endregion
+
         #endregion
+
+        private void dgv_TrangChu_ThongTinChuyenBay_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            cmb_TrangChu_NoiDi.Text = dgv_TrangChu_ThongTinChuyenBay.Rows[e.RowIndex].Cells[3].Value.ToString();
+            cmb_TrangChu_NoiDen.Text = dgv_TrangChu_ThongTinChuyenBay.Rows[e.RowIndex].Cells[4].Value.ToString();
+            DTP_TrangChu_NgayDi.Value = DateTime.ParseExact(dgv_TrangChu_ThongTinChuyenBay.Rows[e.RowIndex].Cells[1].Value.ToString(),"dd/MM/yyyy",null);
+        }
     }
 }

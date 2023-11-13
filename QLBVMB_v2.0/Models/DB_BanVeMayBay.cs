@@ -21,6 +21,7 @@ namespace QLBVMB_v2._0.Models
         public virtual DbSet<HOADON> HOADONs { get; set; }
         public virtual DbSet<KHACHHANG> KHACHHANGs { get; set; }
         public virtual DbSet<KHUYENMAI> KHUYENMAIs { get; set; }
+        public virtual DbSet<LICH> LICHes { get; set; }
         public virtual DbSet<MAYBAY> MAYBAYs { get; set; }
         public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
         public virtual DbSet<PhieuChi> PhieuChis { get; set; }
@@ -36,6 +37,10 @@ namespace QLBVMB_v2._0.Models
 
             modelBuilder.Entity<CHUYENBAY>()
                 .Property(e => e.MaCB)
+                .IsFixedLength();
+
+            modelBuilder.Entity<CHUYENBAY>()
+                .Property(e => e.SohieuCB)
                 .IsFixedLength();
 
             modelBuilder.Entity<CHUYENBAY>()
@@ -116,10 +121,6 @@ namespace QLBVMB_v2._0.Models
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<KHACHHANG>()
-                .Property(e => e.TenKH)
-                .IsFixedLength();
-
-            modelBuilder.Entity<KHACHHANG>()
                 .Property(e => e.email)
                 .IsFixedLength()
                 .IsUnicode(false);
@@ -131,6 +132,10 @@ namespace QLBVMB_v2._0.Models
 
             modelBuilder.Entity<KHUYENMAI>()
                 .Property(e => e.MaKM)
+                .IsFixedLength();
+
+            modelBuilder.Entity<LICH>()
+                .Property(e => e.MaNV)
                 .IsFixedLength();
 
             modelBuilder.Entity<MAYBAY>()
@@ -167,6 +172,11 @@ namespace QLBVMB_v2._0.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<NHANVIEN>()
+                .HasMany(e => e.LICHes)
+                .WithRequired(e => e.NHANVIEN)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<NHANVIEN>()
                 .HasOptional(e => e.Role)
                 .WithRequired(e => e.NHANVIEN);
 
@@ -201,13 +211,13 @@ namespace QLBVMB_v2._0.Models
             modelBuilder.Entity<SANBAY>()
                 .HasMany(e => e.CHUYENBAYs)
                 .WithRequired(e => e.SANBAY)
-                .HasForeignKey(e => e.MaSBDen)
+                .HasForeignKey(e => e.MaSBDi)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<SANBAY>()
                 .HasMany(e => e.CHUYENBAYs1)
                 .WithRequired(e => e.SANBAY1)
-                .HasForeignKey(e => e.MaSBDi)
+                .HasForeignKey(e => e.MaSBDen)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Ve>()

@@ -16,12 +16,12 @@ namespace QLBVMB_v2._0.Models
             CHUYENBAYs1 = new HashSet<CHUYENBAY>();
         }
 
-        [Key]
-        [StringLength(3)]
+        [Required]
+        [StringLength(5)]
         public string MaSB { get; set; }
 
-        [Required]
-        [StringLength(3)]
+        [Key]
+        [StringLength(5)]
         public string IcaoSB { get; set; }
 
         [StringLength(250)]

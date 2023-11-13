@@ -13,6 +13,7 @@ namespace QLBVMB_v2._0.Models
         public NHANVIEN()
         {
             HOADONs = new HashSet<HOADON>();
+            LICHes = new HashSet<LICH>();
             PhieuChis = new HashSet<PhieuChi>();
         }
 
@@ -66,6 +67,9 @@ namespace QLBVMB_v2._0.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HOADON> HOADONs { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<LICH> LICHes { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PhieuChi> PhieuChis { get; set; }

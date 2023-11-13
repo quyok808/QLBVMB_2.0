@@ -124,6 +124,7 @@
     <Compile Include="Models\HOADON.cs" />
     <Compile Include="Models\KHACHHANG.cs" />
     <Compile Include="Models\KHUYENMAI.cs" />
+    <Compile Include="Models\LICH.cs" />
     <Compile Include="Models\MAYBAY.cs" />
     <Compile Include="Models\NHANVIEN.cs" />
     <Compile Include="Models\PhieuChi.cs" />

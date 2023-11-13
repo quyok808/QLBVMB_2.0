@@ -19,6 +19,9 @@ namespace QLBVMB_v2._0.Models
         [StringLength(10)]
         public string MaCB { get; set; }
 
+        [StringLength(10)]
+        public string SohieuCB { get; set; }
+
         [Required]
         [StringLength(250)]
         public string NoiDi { get; set; }
@@ -29,12 +32,14 @@ namespace QLBVMB_v2._0.Models
 
         public DateTime? GioKhoiHanh { get; set; }
 
+        public DateTime? Gioden { get; set; }
+
         [Required]
-        [StringLength(3)]
+        [StringLength(5)]
         public string MaSBDi { get; set; }
 
         [Required]
-        [StringLength(3)]
+        [StringLength(5)]
         public string MaSBDen { get; set; }
 
         [Required]
