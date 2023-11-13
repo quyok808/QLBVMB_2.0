@@ -43,12 +43,13 @@ namespace QLBVMB_v2._0
         {
             List<CHUYENBAY> listCB = db.CHUYENBAYs.ToList();
             rd_TrangChu_1chieu.Checked = true;
-            DTP_QLCB_NgayDi.Value = DateTime.Now.Date;
             DTP_TrangChu_NgayVe.Visible = false;
             lb_TrangChu_NgayVe.Visible = false;
             cmb_TrangChu_NoiDi.DataSource = listNoiDi;
             Filldgv_TrangChu_ThongTinChuyenBay(listCB);
         }
+
+        #region Trang Chủ
 
         #region Form move
         public Point downPoint = Point.Empty;
@@ -156,13 +157,6 @@ namespace QLBVMB_v2._0
         private void DTP_TrangChu_NgayDi_ValueChanged(object sender, EventArgs e)
         {
             DTP_TrangChu_NgayVe.Value = DTP_TrangChu_NgayDi.Value.Tomorrow();
-            DateTime dt = DateTime.Now;
-            TimeSpan time = dt.Subtract(DTP_QLCB_NgayDi.Value);
-            int day = (int)time.TotalDays;
-            if (day < 0)
-            {
-                MessageBox.Show("Ngày đi không được ở trong quá khứ","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
-            }
         }
 
         private void DTP_TrangChu_NgayVe_ValueChanged(object sender, EventArgs e)
@@ -190,5 +184,6 @@ namespace QLBVMB_v2._0
             frm.Dock = DockStyle.Fill;
             frm.Show();
         }
+        #endregion
     }
 }
