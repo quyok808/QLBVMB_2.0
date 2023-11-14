@@ -31,7 +31,8 @@ namespace QLBVMB_v2._0.Models
         [StringLength(10)]
         public string MaCB { get; set; }
 
-        public int? MaKH { get; set; }
+        [StringLength(12)]
+        public string MaKH { get; set; }
 
         public virtual CHUYENBAY CHUYENBAY { get; set; }
 

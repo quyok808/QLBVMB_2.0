@@ -43,12 +43,28 @@ namespace QLBVMB_v2._0
                     btn.Location = new System.Drawing.Point(72 * i + 80, 53 * j + 190);
                     btn.UseVisualStyleBackColor = false;
                     if (listVe[(i * 1 + j * 4)].TrangThai == 1)
+                    {
                         btn.BackColor = Color.Gray;
+                        btn.Enabled = false;
+                    }
+                        
                     else
                         btn.BackColor = Color.White;
-                    //btn.Click += btn_Click;
+                    btn.Click += btn_Click;
 
                     panel_Show.Controls.Add(btn);
+                }
+            }
+        }
+
+        private void btn_Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            if (button.BackColor == Color.White)
+            {
+                if (MessageBox.Show("Bạn có chắc chọn ghế này ?","Thông báo",MessageBoxButtons.OKCancel,MessageBoxIcon.Question) == DialogResult.OK)
+                {
+
                 }
             }
         }

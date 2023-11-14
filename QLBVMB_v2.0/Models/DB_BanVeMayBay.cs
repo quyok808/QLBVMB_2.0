@@ -121,6 +121,10 @@ namespace QLBVMB_v2._0.Models
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<KHACHHANG>()
+                .Property(e => e.MaKH)
+                .IsFixedLength();
+
+            modelBuilder.Entity<KHACHHANG>()
                 .Property(e => e.email)
                 .IsFixedLength()
                 .IsUnicode(false);
@@ -230,6 +234,10 @@ namespace QLBVMB_v2._0.Models
 
             modelBuilder.Entity<Ve>()
                 .Property(e => e.MaCB)
+                .IsFixedLength();
+
+            modelBuilder.Entity<Ve>()
+                .Property(e => e.MaKH)
                 .IsFixedLength();
 
             modelBuilder.Entity<Ve>()

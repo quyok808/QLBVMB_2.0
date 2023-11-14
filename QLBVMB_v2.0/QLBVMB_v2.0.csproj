@@ -163,6 +163,12 @@
     <Compile Include="Thông tin nhân viên.Designer.cs">
       <DependentUpon>Thông tin nhân viên.cs</DependentUpon>
     </Compile>
+    <Compile Include="TrangChu\ThongTinKhachHangMuaVe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrangChu\ThongTinKhachHangMuaVe.Designer.cs">
+      <DependentUpon>ThongTinKhachHangMuaVe.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ChonGhe.resx">
       <DependentUpon>ChonGhe.cs</DependentUpon>
     </EmbeddedResource>
@@ -197,6 +203,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Thông tin nhân viên.resx">
       <DependentUpon>Thông tin nhân viên.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrangChu\ThongTinKhachHangMuaVe.resx">
+      <DependentUpon>ThongTinKhachHangMuaVe.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
