@@ -81,6 +81,8 @@
             this.Column27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmb_TrangChu_NoiDen = new System.Windows.Forms.ComboBox();
             this.cmb_TrangChu_NoiDi = new System.Windows.Forms.ComboBox();
             this.btn_TrangChu_Loc = new System.Windows.Forms.Button();
@@ -161,8 +163,7 @@
             this.xuiButton1 = new XanderUI.XUIButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Column35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.toolStrip2.SuspendLayout();
@@ -624,7 +625,8 @@
             this.Column33,
             this.Column34,
             this.Column35,
-            this.Column36});
+            this.Column36,
+            this.Column37});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("#9Slide03 Arima Madurai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -674,6 +676,22 @@
             this.Column34.MinimumWidth = 6;
             this.Column34.Name = "Column34";
             this.Column34.ReadOnly = true;
+            // 
+            // Column35
+            // 
+            this.Column35.HeaderText = "Nơi Đi";
+            this.Column35.MinimumWidth = 6;
+            this.Column35.Name = "Column35";
+            this.Column35.ReadOnly = true;
+            this.Column35.Visible = false;
+            // 
+            // Column36
+            // 
+            this.Column36.HeaderText = "Nơi Đến";
+            this.Column36.MinimumWidth = 6;
+            this.Column36.Name = "Column36";
+            this.Column36.ReadOnly = true;
+            this.Column36.Visible = false;
             // 
             // cmb_TrangChu_NoiDen
             // 
@@ -1453,21 +1471,13 @@
             this.panel1.Size = new System.Drawing.Size(1249, 585);
             this.panel1.TabIndex = 27;
             // 
-            // Column35
+            // Column37
             // 
-            this.Column35.HeaderText = "Nơi Đi";
-            this.Column35.MinimumWidth = 6;
-            this.Column35.Name = "Column35";
-            this.Column35.ReadOnly = true;
-            this.Column35.Visible = false;
-            // 
-            // Column36
-            // 
-            this.Column36.HeaderText = "Nơi Đến";
-            this.Column36.MinimumWidth = 6;
-            this.Column36.Name = "Column36";
-            this.Column36.ReadOnly = true;
-            this.Column36.Visible = false;
+            this.Column37.HeaderText = "NgayBay";
+            this.Column37.MinimumWidth = 6;
+            this.Column37.Name = "Column37";
+            this.Column37.ReadOnly = true;
+            this.Column37.Visible = false;
             // 
             // Main_Form
             // 
@@ -1651,5 +1661,6 @@
         public System.Windows.Forms.Panel panel_ChonGhe;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column35;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column36;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column37;
     }
 }

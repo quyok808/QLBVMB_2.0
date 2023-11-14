@@ -127,10 +127,11 @@ namespace QLBVMB_v2._0
             {
                 int newRow = dgv_TrangChu_ThongTinChuyenBay.Rows.Add();
                 dgv_TrangChu_ThongTinChuyenBay.Rows[i].Cells[0].Value = listCB[i].MaCB.Trim();
-                dgv_TrangChu_ThongTinChuyenBay.Rows[i].Cells[1].Value = listCB[i].GioKhoiHanh.Value.ToString("HH:mm | dd/MM/yyyy");
+                dgv_TrangChu_ThongTinChuyenBay.Rows[i].Cells[1].Value = listCB[i].GioKhoiHanh.Value.ToString("HH:mm");
                 dgv_TrangChu_ThongTinChuyenBay.Rows[i].Cells[2].Value = listCB[i].HANGHANGKHONG.TenHang;
                 dgv_TrangChu_ThongTinChuyenBay.Rows[i].Cells[3].Value = listCB[i].NoiDi;
                 dgv_TrangChu_ThongTinChuyenBay.Rows[i].Cells[4].Value = listCB[i].NoiDen;
+                dgv_TrangChu_ThongTinChuyenBay.Rows[i].Cells[5].Value = listCB[i].GioKhoiHanh.Value.ToString("dd/MM/yyyy");
             }
         }
         #endregion
@@ -206,9 +207,16 @@ namespace QLBVMB_v2._0
 
         private void dgv_TrangChu_ThongTinChuyenBay_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            cmb_TrangChu_NoiDi.Text = dgv_TrangChu_ThongTinChuyenBay.Rows[e.RowIndex].Cells[3].Value.ToString();
-            cmb_TrangChu_NoiDen.Text = dgv_TrangChu_ThongTinChuyenBay.Rows[e.RowIndex].Cells[4].Value.ToString();
-            DTP_TrangChu_NgayDi.Value = DateTime.ParseExact(dgv_TrangChu_ThongTinChuyenBay.Rows[e.RowIndex].Cells[1].Value.ToString(),"dd/MM/yyyy",null);
+            try
+            {
+                cmb_TrangChu_NoiDi.Text = dgv_TrangChu_ThongTinChuyenBay.Rows[e.RowIndex].Cells[3].Value.ToString();
+                cmb_TrangChu_NoiDen.Text = dgv_TrangChu_ThongTinChuyenBay.Rows[e.RowIndex].Cells[4].Value.ToString();
+                DTP_TrangChu_NgayDi.Value = DateTime.Parse(dgv_TrangChu_ThongTinChuyenBay.Rows[e.RowIndex].Cells[5].Value.ToString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
