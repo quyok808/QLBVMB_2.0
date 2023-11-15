@@ -18,18 +18,32 @@ namespace QLBVMB_v2._0
     {
         DB_BanVeMayBay db = new DB_BanVeMayBay();
         List<Ve> listVe;
+        #region data
+        public List<string> dataDgv_ThongtinHoaDon = new List<string>();
+        #endregion
+
+        #region Lấy dữ liệu
+        public event EventHandler DataEntered;
+
+        protected virtual void OnDataEntered()
+        {
+            DataEntered?.Invoke(this, EventArgs.Empty);
+        }
+        #endregion
         public ChonGhe()
         {
+          
             InitializeComponent();
         }
 
         public ChonGhe(List<Ve> listVe)
         {
+      
             InitializeComponent();
             this.listVe = listVe;
         }
 
-        private void ChonGhe_Load(object sender, EventArgs e)
+        public void ChonGhe_Load(object sender, EventArgs e)
         {
             for (int i = 0; i < 4; i++)
             {
@@ -59,22 +73,30 @@ namespace QLBVMB_v2._0
             }
         }
 
-        private void btn_Click(object sender, EventArgs e)
+        public void btn_Click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
             if (button.BackColor == Color.White)
             {
                 if (MessageBox.Show("Bạn có chắc chọn ghế này ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
-                    Main_Form.mave = button.Text.Trim();
-                    ThongTinKhachHangMuaVe frm = new ThongTinKhachHangMuaVe();
-                    if (frm.ShowDialog() == DialogResult.OK)
+                    Ve ve = db.Ves.FirstOrDefault(p => p.MaVe.Trim() == button.Text.Trim());
+                    if (ve != null)
                     {
-                        Main_Form.kh[0] = frm.lb_MaKH.Text.Trim();
-                        Main_Form.kh[1] = frm.txt_TenKH.Text;
-                        Main_Form.kh[2] = frm.DTP_NgaySinh.Value.ToString("dd/MM/yyyy");
-                        Main_Form.kh[3] = frm.txt_CCCD.Text;
-                        Main_Form.kh[4] = frm.txt_Email.Text;
+                        ThongTinKhachHangMuaVe frm = new ThongTinKhachHangMuaVe();
+                        if (frm.ShowDialog() == DialogResult.OK)
+                        {
+                        
+                            dataDgv_ThongtinHoaDon.Add(frm.lb_MaKH.Text.Trim());
+                            dataDgv_ThongtinHoaDon.Add(frm.txt_TenKH.Text);
+                            dataDgv_ThongtinHoaDon.Add(frm.txt_CCCD.Text);
+                            dataDgv_ThongtinHoaDon.Add(ve.MaVe);
+                            dataDgv_ThongtinHoaDon.Add(frm.txt_Email.Text);
+                            dataDgv_ThongtinHoaDon.Add(frm.DTP_NgaySinh.Text);
+                            dataDgv_ThongtinHoaDon.Add(ve.GiaTien.ToString());
+                            OnDataEntered();
+                            this.Close();
+                        }
                     }
                 }
             }

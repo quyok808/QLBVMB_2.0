@@ -1,4 +1,6 @@
-﻿namespace QLBVMB_v2._0
+﻿using System.Windows.Forms;
+
+namespace QLBVMB_v2._0
 {
     partial class Main_Form
     {
@@ -29,11 +31,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_Form));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.label8 = new System.Windows.Forms.Label();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
@@ -75,7 +77,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button3 = new System.Windows.Forms.Button();
             this.txt_TrangChu_MaCB = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_TrangChu_TongTien = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dgv_TrangChu_ThongTinChuyenBay = new System.Windows.Forms.DataGridView();
             this.Column27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -94,9 +96,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_TrangChu_Xoa = new System.Windows.Forms.Button();
             this.rd_TrangChu_1chieu = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rd_TrangChu_KhuHoi = new System.Windows.Forms.RadioButton();
             this.panel_ChonGhe = new System.Windows.Forms.Panel();
             this.dgv_TrangChu_ThongTinHoaDon = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -107,6 +109,7 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column38 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.textBox11 = new System.Windows.Forms.TextBox();
@@ -164,6 +167,7 @@
             this.xuiButton1 = new XanderUI.XUIButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Column39 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.toolStrip2.SuspendLayout();
@@ -540,7 +544,7 @@
             // 
             this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.txt_TrangChu_MaCB);
-            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.txt_TrangChu_TongTien);
             this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.dgv_TrangChu_ThongTinChuyenBay);
             this.tabPage1.Controls.Add(this.cmb_TrangChu_NoiDen);
@@ -553,9 +557,9 @@
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.button2);
+            this.tabPage1.Controls.Add(this.btn_TrangChu_Xoa);
             this.tabPage1.Controls.Add(this.rd_TrangChu_1chieu);
-            this.tabPage1.Controls.Add(this.radioButton1);
+            this.tabPage1.Controls.Add(this.rd_TrangChu_KhuHoi);
             this.tabPage1.Controls.Add(this.panel_ChonGhe);
             this.tabPage1.Controls.Add(this.dgv_TrangChu_ThongTinHoaDon);
             this.tabPage1.Location = new System.Drawing.Point(4, 38);
@@ -585,13 +589,13 @@
             this.txt_TrangChu_MaCB.TabIndex = 25;
             this.txt_TrangChu_MaCB.TextChanged += new System.EventHandler(this.txt_TrangChu_MaCB_TextChanged);
             // 
-            // textBox1
+            // txt_TrangChu_TongTien
             // 
-            this.textBox1.Location = new System.Drawing.Point(561, 302);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(217, 35);
-            this.textBox1.TabIndex = 11;
+            this.txt_TrangChu_TongTien.Location = new System.Drawing.Point(561, 302);
+            this.txt_TrangChu_TongTien.Name = "txt_TrangChu_TongTien";
+            this.txt_TrangChu_TongTien.ReadOnly = true;
+            this.txt_TrangChu_TongTien.Size = new System.Drawing.Size(217, 35);
+            this.txt_TrangChu_TongTien.TabIndex = 11;
             // 
             // label6
             // 
@@ -611,14 +615,14 @@
             this.dgv_TrangChu_ThongTinChuyenBay.BackgroundColor = System.Drawing.Color.White;
             this.dgv_TrangChu_ThongTinChuyenBay.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgv_TrangChu_ThongTinChuyenBay.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("#9Slide03 Arima Madurai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_TrangChu_ThongTinChuyenBay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("#9Slide03 Arima Madurai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_TrangChu_ThongTinChuyenBay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_TrangChu_ThongTinChuyenBay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_TrangChu_ThongTinChuyenBay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column27,
@@ -627,26 +631,26 @@
             this.Column35,
             this.Column36,
             this.Column37});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("#9Slide03 Arima Madurai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_TrangChu_ThongTinChuyenBay.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("#9Slide03 Arima Madurai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_TrangChu_ThongTinChuyenBay.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_TrangChu_ThongTinChuyenBay.EnableHeadersVisualStyles = false;
             this.dgv_TrangChu_ThongTinChuyenBay.Location = new System.Drawing.Point(792, 6);
             this.dgv_TrangChu_ThongTinChuyenBay.Name = "dgv_TrangChu_ThongTinChuyenBay";
             this.dgv_TrangChu_ThongTinChuyenBay.ReadOnly = true;
             this.dgv_TrangChu_ThongTinChuyenBay.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("#9Slide03 Arima Madurai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_TrangChu_ThongTinChuyenBay.RowHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("#9Slide03 Arima Madurai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_TrangChu_ThongTinChuyenBay.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgv_TrangChu_ThongTinChuyenBay.RowHeadersVisible = false;
             this.dgv_TrangChu_ThongTinChuyenBay.RowHeadersWidth = 51;
             this.dgv_TrangChu_ThongTinChuyenBay.RowTemplate.Height = 30;
@@ -797,14 +801,15 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Tổng tiền";
             // 
-            // button2
+            // btn_TrangChu_Xoa
             // 
-            this.button2.Location = new System.Drawing.Point(1121, 307);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(111, 30);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Xoá";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_TrangChu_Xoa.Location = new System.Drawing.Point(1121, 307);
+            this.btn_TrangChu_Xoa.Name = "btn_TrangChu_Xoa";
+            this.btn_TrangChu_Xoa.Size = new System.Drawing.Size(111, 30);
+            this.btn_TrangChu_Xoa.TabIndex = 9;
+            this.btn_TrangChu_Xoa.Text = "Xoá";
+            this.btn_TrangChu_Xoa.UseVisualStyleBackColor = true;
+            this.btn_TrangChu_Xoa.Click += new System.EventHandler(this.btn_TrangChu_Xoa_Click);
             // 
             // rd_TrangChu_1chieu
             // 
@@ -817,17 +822,17 @@
             this.rd_TrangChu_1chieu.Text = "1 Chiều";
             this.rd_TrangChu_1chieu.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rd_TrangChu_KhuHoi
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(517, 14);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(91, 33);
-            this.radioButton1.TabIndex = 6;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Khứ hồi";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.rd_TrangChu_KhuHoi.AutoSize = true;
+            this.rd_TrangChu_KhuHoi.Location = new System.Drawing.Point(517, 14);
+            this.rd_TrangChu_KhuHoi.Name = "rd_TrangChu_KhuHoi";
+            this.rd_TrangChu_KhuHoi.Size = new System.Drawing.Size(91, 33);
+            this.rd_TrangChu_KhuHoi.TabIndex = 6;
+            this.rd_TrangChu_KhuHoi.TabStop = true;
+            this.rd_TrangChu_KhuHoi.Text = "Khứ hồi";
+            this.rd_TrangChu_KhuHoi.UseVisualStyleBackColor = true;
+            this.rd_TrangChu_KhuHoi.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // panel_ChonGhe
             // 
@@ -845,14 +850,14 @@
             this.dgv_TrangChu_ThongTinHoaDon.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgv_TrangChu_ThongTinHoaDon.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgv_TrangChu_ThongTinHoaDon.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("#9Slide03 Arima Madurai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_TrangChu_ThongTinHoaDon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("#9Slide03 Arima Madurai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_TrangChu_ThongTinHoaDon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgv_TrangChu_ThongTinHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_TrangChu_ThongTinHoaDon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -862,15 +867,17 @@
             this.Column5,
             this.Column6,
             this.Column7,
-            this.Column8});
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("#9Slide03 Arima Madurai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_TrangChu_ThongTinHoaDon.DefaultCellStyle = dataGridViewCellStyle15;
+            this.Column8,
+            this.Column38,
+            this.Column39});
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("#9Slide03 Arima Madurai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_TrangChu_ThongTinHoaDon.DefaultCellStyle = dataGridViewCellStyle10;
             this.dgv_TrangChu_ThongTinHoaDon.EnableHeadersVisualStyles = false;
             this.dgv_TrangChu_ThongTinHoaDon.Location = new System.Drawing.Point(3, 343);
             this.dgv_TrangChu_ThongTinHoaDon.Name = "dgv_TrangChu_ThongTinHoaDon";
@@ -938,6 +945,14 @@
             this.Column8.MinimumWidth = 6;
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
+            // 
+            // Column38
+            // 
+            this.Column38.HeaderText = "NgaySinh";
+            this.Column38.MinimumWidth = 6;
+            this.Column38.Name = "Column38";
+            this.Column38.ReadOnly = true;
+            this.Column38.Visible = false;
             // 
             // tabControl1
             // 
@@ -1480,6 +1495,14 @@
             this.panel1.Size = new System.Drawing.Size(1249, 585);
             this.panel1.TabIndex = 27;
             // 
+            // Column39
+            // 
+            this.Column39.HeaderText = "giá tiền";
+            this.Column39.MinimumWidth = 6;
+            this.Column39.Name = "Column39";
+            this.Column39.ReadOnly = true;
+            this.Column39.Visible = false;
+            // 
             // Main_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -1546,12 +1569,9 @@
         private System.Windows.Forms.ToolStripButton TS_QLCB_Update;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox txt_TrangChu_MaCB;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_TrangChu_TongTien;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dgv_TrangChu_ThongTinChuyenBay;
-        private System.Windows.Forms.ComboBox cmb_TrangChu_NoiDen;
-        private System.Windows.Forms.ComboBox cmb_TrangChu_NoiDi;
         private System.Windows.Forms.Button btn_TrangChu_Loc;
         private System.Windows.Forms.Label lb_TrangChu_NgayVe;
         private System.Windows.Forms.Label label4;
@@ -1560,10 +1580,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_TrangChu_Xoa;
         private System.Windows.Forms.RadioButton rd_TrangChu_1chieu;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.DataGridView dgv_TrangChu_ThongTinHoaDon;
+        private System.Windows.Forms.RadioButton rd_TrangChu_KhuHoi;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -1663,5 +1682,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column35;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column36;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column37;
+        public System.Windows.Forms.DataGridView dgv_TrangChu_ThongTinHoaDon;
+        public System.Windows.Forms.TextBox txt_TrangChu_MaCB;
+        public System.Windows.Forms.ComboBox cmb_TrangChu_NoiDen;
+        public System.Windows.Forms.ComboBox cmb_TrangChu_NoiDi;
+        private DataGridViewTextBoxColumn Column38;
+        private DataGridViewTextBoxColumn Column39;
     }
 }

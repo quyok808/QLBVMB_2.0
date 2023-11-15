@@ -35,8 +35,7 @@ namespace QLBVMB_v2._0
             "Kiên Giang",
             "Đồng Nai"
         };
-        public static List<string> kh;
-        public static string mave;
+        int chieudi = 1;
         #endregion
         public Main_Form()
         {
@@ -89,34 +88,41 @@ namespace QLBVMB_v2._0
         }
         #endregion
         #region Button Lọc
+        private List<CHUYENBAY> listCB(string noidi, string noiden, DateTimePicker ngaydi)
+        {
+            List<CHUYENBAY> ListCB = new List<CHUYENBAY>();
+            List<CHUYENBAY> listTemp = db.CHUYENBAYs.Where(p => p.NoiDi.Trim() == cmb_TrangChu_NoiDi.Text.Trim() && p.NoiDen.Trim() == cmb_TrangChu_NoiDen.Text.Trim()).ToList();
+            foreach (var item in listTemp)
+            {
+                TimeSpan time = item.GioKhoiHanh.Value.Subtract(DTP_TrangChu_NgayDi.Value);
+                int Days = time.Days;
+                if (Days == 0)
+                {
+                    ListCB.Add(item);
+                }
+            }
+            return ListCB;
+        }
+
         private void btn_TrangChu_Loc_Click(object sender, EventArgs e)
         {
             try
             {
                 if (rd_TrangChu_1chieu.Checked)
+                {
+                    #region fill listCB 1 chiều
+                    
+                    if (listCB(cmb_TrangChu_NoiDi.Text.Trim(), cmb_TrangChu_NoiDen.Text.Trim(), DTP_TrangChu_NgayDi).Count > 0)
                     {
-                        #region fill listCB 1 chiều
-                        List<CHUYENBAY> listCB = new List<CHUYENBAY>();
-                        List<CHUYENBAY> listTemp = db.CHUYENBAYs.Where(p => p.NoiDi.Trim() == cmb_TrangChu_NoiDi.Text.Trim() && p.NoiDen.Trim() == cmb_TrangChu_NoiDen.Text.Trim()).ToList();
-                        foreach (var item in listTemp)
-                        {
-                            TimeSpan time = item.GioKhoiHanh.Value.Subtract(DTP_TrangChu_NgayDi.Value);
-                            int Days = time.Days;
-                            if (Days == 0)
-                            {
-                                listCB.Add(item);
-                            }
-                        }
-                        if (listCB.Count > 0)
-                        {
-                            Filldgv_TrangChu_ThongTinChuyenBay(listCB);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Không tìm thấy dữ liệu !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                        #endregion
+                        Filldgv_TrangChu_ThongTinChuyenBay(listCB(cmb_TrangChu_NoiDi.Text.Trim(), cmb_TrangChu_NoiDen.Text.Trim(), DTP_TrangChu_NgayDi));
                     }
+                    else
+                    {
+                        MessageBox.Show("Không tìm thấy dữ liệu !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    #endregion
+                }
+
             }
             catch (Exception ex) 
             {
@@ -183,9 +189,10 @@ namespace QLBVMB_v2._0
         {
             txt_TrangChu_MaCB.Text = dgv_TrangChu_ThongTinChuyenBay.Rows[e.RowIndex].Cells[0].Value.ToString().Trim();
         }
-        
+        List<string> list = new List<string>();
         private void txt_TrangChu_MaCB_TextChanged(object sender, EventArgs e) // hiện ghế bên dgv trái trong trang chủ
         {
+            panel_ChonGhe.Controls.Clear();
             if (txt_TrangChu_MaCB.Text != "")
             {
                 List<Ve> listVe1 = db.Ves.Where(p => p.MaCB.Trim() == txt_TrangChu_MaCB.Text.Trim()).ToList();
@@ -195,8 +202,14 @@ namespace QLBVMB_v2._0
                     frm.TopLevel = false;
                     panel_ChonGhe.Controls.Add(frm);
                     frm.Dock = DockStyle.Fill;
+                    frm.DataEntered += (senders, es) =>
+                    {
+                        list = frm.dataDgv_ThongtinHoaDon;
+                        Filldgv_TrangChu_ThongTinHoaDon(frm.dataDgv_ThongtinHoaDon);
+                        list = null;
+                        txt_TrangChu_MaCB.Text = "";
+                    };
                     frm.Show();
-                    
                 }
                 else
                 {
@@ -207,17 +220,29 @@ namespace QLBVMB_v2._0
             }
         }
 
-        public void Filldgv_TrangChu_ThongTinHoaDon(List<string> kh, string mave)
+        private int tongTien()
         {
-            int newrows = dgv_TrangChu_ThongTinHoaDon.Rows.Add();
-            dgv_TrangChu_ThongTinHoaDon.Rows[newrows].Cells[0].Value = kh[0];
-            dgv_TrangChu_ThongTinHoaDon.Rows[newrows].Cells[1].Value = kh[1];
-            dgv_TrangChu_ThongTinHoaDon.Rows[newrows].Cells[2].Value = kh[2];
-            dgv_TrangChu_ThongTinHoaDon.Rows[newrows].Cells[3].Value = mave;
-            dgv_TrangChu_ThongTinHoaDon.Rows[newrows].Cells[4].Value = cmb_TrangChu_NoiDi.SelectedItem;
-            dgv_TrangChu_ThongTinHoaDon.Rows[newrows].Cells[5].Value = cmb_TrangChu_NoiDen.SelectedItem;
-            dgv_TrangChu_ThongTinHoaDon.Rows[newrows].Cells[6].Value = kh[3];
-            dgv_TrangChu_ThongTinHoaDon.Rows[newrows].Cells[7].Value = txt_TrangChu_MaCB.Text.Trim();
+            int tong = 0;
+            for (int i = 0; i < dgv_TrangChu_ThongTinHoaDon.Rows.Count; i++)
+            {
+                tong += int.Parse(dgv_TrangChu_ThongTinHoaDon.Rows[i].Cells[9].Value.ToString().Trim());
+            }
+            return tong;
+        }
+        public void Filldgv_TrangChu_ThongTinHoaDon(List<string> data)
+        {
+            int newrow = dgv_TrangChu_ThongTinHoaDon.Rows.Add();
+            dgv_TrangChu_ThongTinHoaDon.Rows[newrow].Cells[0].Value = data[0];
+            dgv_TrangChu_ThongTinHoaDon.Rows[newrow].Cells[1].Value = data[1];
+            dgv_TrangChu_ThongTinHoaDon.Rows[newrow].Cells[2].Value = data[2];
+            dgv_TrangChu_ThongTinHoaDon.Rows[newrow].Cells[3].Value = data[3];
+            dgv_TrangChu_ThongTinHoaDon.Rows[newrow].Cells[4].Value = cmb_TrangChu_NoiDi.Text;
+            dgv_TrangChu_ThongTinHoaDon.Rows[newrow].Cells[5].Value = cmb_TrangChu_NoiDen.Text;
+            dgv_TrangChu_ThongTinHoaDon.Rows[newrow].Cells[6].Value = data[4];
+            dgv_TrangChu_ThongTinHoaDon.Rows[newrow].Cells[7].Value = txt_TrangChu_MaCB.Text.Trim();
+            dgv_TrangChu_ThongTinHoaDon.Rows[newrow].Cells[8].Value = data[5];
+            dgv_TrangChu_ThongTinHoaDon.Rows[newrow].Cells[9].Value = data[6];
+            txt_TrangChu_TongTien.Text = tongTien().ToString();
         }
         #endregion
         #region Xem thông tin chuyến bay đang chọn
@@ -235,7 +260,13 @@ namespace QLBVMB_v2._0
             }
         }
         #endregion
+
         #endregion
 
+        private void btn_TrangChu_Xoa_Click(object sender, EventArgs e)
+        {
+            dgv_TrangChu_ThongTinHoaDon.Rows.Clear();
+            txt_TrangChu_TongTien.Text = "";
+        }
     }
 }
