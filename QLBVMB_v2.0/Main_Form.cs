@@ -1,4 +1,5 @@
 ﻿using QLBVMB_v2._0.Models;
+using QLBVMB_v2._0.TrangChu;
 using Sunny.UI;
 using Sunny.UI.Win32;
 using System;
@@ -34,11 +35,14 @@ namespace QLBVMB_v2._0
             "Kiên Giang",
             "Đồng Nai"
         };
+        public static List<string> kh;
+        public static string mave;
         #endregion
         public Main_Form()
         {
             InitializeComponent();
         }
+
         private void Main_Form_Load(object sender, EventArgs e)
         {
             rd_TrangChu_1chieu.Checked = true;
@@ -180,7 +184,7 @@ namespace QLBVMB_v2._0
             txt_TrangChu_MaCB.Text = dgv_TrangChu_ThongTinChuyenBay.Rows[e.RowIndex].Cells[0].Value.ToString().Trim();
         }
         
-        private void txt_TrangChu_MaCB_TextChanged(object sender, EventArgs e)
+        private void txt_TrangChu_MaCB_TextChanged(object sender, EventArgs e) // hiện ghế bên dgv trái trong trang chủ
         {
             if (txt_TrangChu_MaCB.Text != "")
             {
@@ -192,6 +196,7 @@ namespace QLBVMB_v2._0
                     panel_ChonGhe.Controls.Add(frm);
                     frm.Dock = DockStyle.Fill;
                     frm.Show();
+                    
                 }
                 else
                 {
@@ -201,10 +206,21 @@ namespace QLBVMB_v2._0
                 }
             }
         }
-        #endregion
 
+        public void Filldgv_TrangChu_ThongTinHoaDon(List<string> kh, string mave)
+        {
+            int newrows = dgv_TrangChu_ThongTinHoaDon.Rows.Add();
+            dgv_TrangChu_ThongTinHoaDon.Rows[newrows].Cells[0].Value = kh[0];
+            dgv_TrangChu_ThongTinHoaDon.Rows[newrows].Cells[1].Value = kh[1];
+            dgv_TrangChu_ThongTinHoaDon.Rows[newrows].Cells[2].Value = kh[2];
+            dgv_TrangChu_ThongTinHoaDon.Rows[newrows].Cells[3].Value = mave;
+            dgv_TrangChu_ThongTinHoaDon.Rows[newrows].Cells[4].Value = cmb_TrangChu_NoiDi.SelectedItem;
+            dgv_TrangChu_ThongTinHoaDon.Rows[newrows].Cells[5].Value = cmb_TrangChu_NoiDen.SelectedItem;
+            dgv_TrangChu_ThongTinHoaDon.Rows[newrows].Cells[6].Value = kh[3];
+            dgv_TrangChu_ThongTinHoaDon.Rows[newrows].Cells[7].Value = txt_TrangChu_MaCB.Text.Trim();
+        }
         #endregion
-
+        #region Xem thông tin chuyến bay đang chọn
         private void dgv_TrangChu_ThongTinChuyenBay_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -218,5 +234,8 @@ namespace QLBVMB_v2._0
                 MessageBox.Show(ex.Message);
             }
         }
+        #endregion
+        #endregion
+
     }
 }

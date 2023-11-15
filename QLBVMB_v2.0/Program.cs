@@ -23,7 +23,7 @@ namespace QLBVMB_v2._0
             }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ThongTinKhachHangMuaVe());
+            Application.Run(new Main_Form());
         }
 
         [System.Runtime.InteropServices.DllImport("user32.dll")]

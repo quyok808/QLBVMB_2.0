@@ -1,6 +1,7 @@
 ﻿using Microsoft.Reporting.Map.WebForms.BingMaps;
 using QLBVMB_v2._0.Models;
 using QLBVMB_v2._0.Properties;
+using QLBVMB_v2._0.TrangChu;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,6 +28,7 @@ namespace QLBVMB_v2._0
             InitializeComponent();
             this.listVe = listVe;
         }
+
         private void ChonGhe_Load(object sender, EventArgs e)
         {
             for (int i = 0; i < 4; i++)
@@ -62,9 +64,18 @@ namespace QLBVMB_v2._0
             Button button = (Button)sender;
             if (button.BackColor == Color.White)
             {
-                if (MessageBox.Show("Bạn có chắc chọn ghế này ?","Thông báo",MessageBoxButtons.OKCancel,MessageBoxIcon.Question) == DialogResult.OK)
+                if (MessageBox.Show("Bạn có chắc chọn ghế này ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
-
+                    Main_Form.mave = button.Text.Trim();
+                    ThongTinKhachHangMuaVe frm = new ThongTinKhachHangMuaVe();
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        Main_Form.kh[0] = frm.lb_MaKH.Text.Trim();
+                        Main_Form.kh[1] = frm.txt_TenKH.Text;
+                        Main_Form.kh[2] = frm.DTP_NgaySinh.Value.ToString("dd/MM/yyyy");
+                        Main_Form.kh[3] = frm.txt_CCCD.Text;
+                        Main_Form.kh[4] = frm.txt_Email.Text;
+                    }
                 }
             }
         }
