@@ -35,7 +35,6 @@ namespace QLBVMB_v2._0
             "Kiên Giang",
             "Đồng Nai"
         };
-        int chieudi = 1;
         #endregion
         public Main_Form()
         {
@@ -108,21 +107,19 @@ namespace QLBVMB_v2._0
         {
             try
             {
-                    #region fill listCB 1 chiều
+                #region fill listCB 1 chiều
                     
-                    if (listCB(cmb_TrangChu_NoiDi.Text.Trim(), cmb_TrangChu_NoiDen.Text.Trim(), DTP_TrangChu_NgayDi).Count > 0)
-                    {
-                        Filldgv_TrangChu_ThongTinChuyenBay(listCB(cmb_TrangChu_NoiDi.Text.Trim(), cmb_TrangChu_NoiDen.Text.Trim(), DTP_TrangChu_NgayDi));
-                    }
-                    else
-                    {
-                        MessageBox.Show("Không tìm thấy dữ liệu !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                    #endregion
-                
-
+                if (listCB(cmb_TrangChu_NoiDi.Text.Trim(), cmb_TrangChu_NoiDen.Text.Trim(), DTP_TrangChu_NgayDi).Count > 0)
+                {
+                    Filldgv_TrangChu_ThongTinChuyenBay(listCB(cmb_TrangChu_NoiDi.Text.Trim(), cmb_TrangChu_NoiDen.Text.Trim(), DTP_TrangChu_NgayDi));
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy dữ liệu !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                #endregion
             }
-            catch (Exception ex) 
+            catch
             {
                 MessageBox.Show("Không tìm thấy dữ liệu !","Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -185,6 +182,11 @@ namespace QLBVMB_v2._0
         #region Chọn ghế ngồi
         private void dgv_TrangChu_ThongTinChuyenBay_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex == -1)
+            {
+                // Đây là header của cột, không thực hiện xử lý dưới đây
+                return;
+            }
             txt_TrangChu_MaCB.Text = dgv_TrangChu_ThongTinChuyenBay.Rows[e.RowIndex].Cells[0].Value.ToString().Trim();
         }
         List<string> list = new List<string>();
@@ -253,13 +255,18 @@ namespace QLBVMB_v2._0
         {
             try
             {
+                if (e.RowIndex == -1)
+                {
+                    // Đây là header của cột, không thực hiện xử lý dưới đây
+                    return;
+                }
                 cmb_TrangChu_NoiDi.Text = dgv_TrangChu_ThongTinChuyenBay.Rows[e.RowIndex].Cells[3].Value.ToString();
                 cmb_TrangChu_NoiDen.Text = dgv_TrangChu_ThongTinChuyenBay.Rows[e.RowIndex].Cells[4].Value.ToString();
                 DTP_TrangChu_NgayDi.Value = DateTime.Parse(dgv_TrangChu_ThongTinChuyenBay.Rows[e.RowIndex].Cells[5].Value.ToString());
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message,"tet");
             }
         }
         #endregion

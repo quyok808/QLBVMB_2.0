@@ -121,6 +121,7 @@
             this.txt_CCCD.Name = "txt_CCCD";
             this.txt_CCCD.Size = new System.Drawing.Size(342, 40);
             this.txt_CCCD.TabIndex = 3;
+            this.txt_CCCD.Leave += new System.EventHandler(this.txt_CCCD_Leave);
             // 
             // txt_Email
             // 
@@ -129,6 +130,9 @@
             this.txt_Email.Name = "txt_Email";
             this.txt_Email.Size = new System.Drawing.Size(342, 40);
             this.txt_Email.TabIndex = 4;
+            this.txt_Email.Tag = "";
+            this.txt_Email.Enter += new System.EventHandler(this.txt_Email_Enter);
+            this.txt_Email.Leave += new System.EventHandler(this.txt_Email_Leave);
             // 
             // btn_Huy
             // 
