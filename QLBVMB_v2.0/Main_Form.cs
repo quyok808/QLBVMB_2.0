@@ -91,10 +91,10 @@ namespace QLBVMB_v2._0
         private List<CHUYENBAY> listCB(string noidi, string noiden, DateTimePicker ngaydi)
         {
             List<CHUYENBAY> ListCB = new List<CHUYENBAY>();
-            List<CHUYENBAY> listTemp = db.CHUYENBAYs.Where(p => p.NoiDi.Trim() == cmb_TrangChu_NoiDi.Text.Trim() && p.NoiDen.Trim() == cmb_TrangChu_NoiDen.Text.Trim()).ToList();
+            List<CHUYENBAY> listTemp = db.CHUYENBAYs.Where(p => p.NoiDi.Trim() == noidi && p.NoiDen.Trim() == noiden).ToList();
             foreach (var item in listTemp)
             {
-                TimeSpan time = item.GioKhoiHanh.Value.Subtract(DTP_TrangChu_NgayDi.Value);
+                TimeSpan time = item.GioKhoiHanh.Value.Subtract(ngaydi.Value);
                 int Days = time.Days;
                 if (Days == 0)
                 {
@@ -108,8 +108,6 @@ namespace QLBVMB_v2._0
         {
             try
             {
-                if (rd_TrangChu_1chieu.Checked)
-                {
                     #region fill listCB 1 chiều
                     
                     if (listCB(cmb_TrangChu_NoiDi.Text.Trim(), cmb_TrangChu_NoiDen.Text.Trim(), DTP_TrangChu_NgayDi).Count > 0)
@@ -121,7 +119,7 @@ namespace QLBVMB_v2._0
                         MessageBox.Show("Không tìm thấy dữ liệu !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     #endregion
-                }
+                
 
             }
             catch (Exception ex) 
@@ -206,8 +204,13 @@ namespace QLBVMB_v2._0
                     {
                         list = frm.dataDgv_ThongtinHoaDon;
                         Filldgv_TrangChu_ThongTinHoaDon(frm.dataDgv_ThongtinHoaDon);
-                        list = null;
+                        
                         txt_TrangChu_MaCB.Text = "";
+                        if (rd_TrangChu_KhuHoi.Checked)
+                        {
+                            Filldgv_TrangChu_ThongTinChuyenBay(listCB(cmb_TrangChu_NoiDen.Text.Trim(), cmb_TrangChu_NoiDi.Text.Trim(), DTP_TrangChu_NgayVe));
+                        }
+                        list = null;
                     };
                     frm.Show();
                 }
