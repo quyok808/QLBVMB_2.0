@@ -50,6 +50,8 @@ namespace QLBVMB_v2._0
             
             List<CHUYENBAY> listCB = db.CHUYENBAYs.Where(p => DateTime.Compare(p.GioKhoiHanh.Value,DateTime.Now) > 0).ToList();
             Filldgv_TrangChu_ThongTinChuyenBay(listCB);
+            List<NHANVIEN> listnv = db.NHANVIENs.ToList();
+            fill_dgv_thongtinnhanvien(listnv);
         }
 
         #region Trang Chủ
@@ -271,12 +273,52 @@ namespace QLBVMB_v2._0
         }
         #endregion
 
-        #endregion
+        #region Thông tin nhân viên
+        private void fill_dgv_thongtinnhanvien(List<NHANVIEN> listnv)
+        {
+            dgv_Thongtinnhanvien.Rows.Clear();
+            foreach (var item in listnv)
+            {
+                int newrow = dgv_Thongtinnhanvien.Rows.Add();
+                dgv_Thongtinnhanvien.Rows[newrow].Cells[0].Value = item.MaNV;
+                dgv_Thongtinnhanvien.Rows[newrow].Cells[1].Value = item.TenNV;
+                dgv_Thongtinnhanvien.Rows[newrow].Cells[2].Value = item.Email;
+            }
+        }
+        private void txtmanv_TextChanged(object sender, EventArgs e)
+        {
+            List<NHANVIEN> listnv = db.NHANVIENs.Where(p => p.MaNV.Trim().Contains(txtmanv.Text)).ToList();
+            fill_dgv_thongtinnhanvien(listnv);
+        }
 
+        private void txttennv_TextChanged(object sender, EventArgs e)
+        {
+            List<NHANVIEN> listnv = db.NHANVIENs.Where(p => p.TenNV.Trim().Contains(txttennv.Text)).ToList();
+            fill_dgv_thongtinnhanvien(listnv);
+        }
+
+        private void txtemail_TextChanged(object sender, EventArgs e)
+        {
+            List<NHANVIEN> listnv = db.NHANVIENs.Where(p => p.Email.Trim().Contains(txtemail.Text)).ToList();
+            fill_dgv_thongtinnhanvien(listnv);
+        }
+        private void dgv_Thongtinnhanvien_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string manv = dgv_Thongtinnhanvien.Rows[e.RowIndex].Cells[0].Value.ToString();
+            NHANVIEN nv = db.NHANVIENs.FirstOrDefault(p => p.MaNV.Trim() == manv.Trim());
+            Thông_tin_nhân_viên f = new Thông_tin_nhân_viên(nv);
+            f.Show();
+        }
+        #endregion
         private void btn_TrangChu_Xoa_Click(object sender, EventArgs e)
         {
             dgv_TrangChu_ThongTinHoaDon.Rows.Clear();
             txt_TrangChu_TongTien.Text = "";
         }
+
+        
+        #endregion
+
+
     }
 }

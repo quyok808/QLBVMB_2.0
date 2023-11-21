@@ -8,7 +8,7 @@ namespace QLBVMB_v2._0.Models
     public partial class DB_BanVeMayBay : DbContext
     {
         public DB_BanVeMayBay()
-            : base("name=DB_BanVeMayBay")
+            : base("name=DB_BanVeMayBay1")
         {
         }
 
