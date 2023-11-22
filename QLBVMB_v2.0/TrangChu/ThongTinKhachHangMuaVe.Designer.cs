@@ -90,6 +90,7 @@
             this.txt_TenKH.Name = "txt_TenKH";
             this.txt_TenKH.Size = new System.Drawing.Size(342, 40);
             this.txt_TenKH.TabIndex = 1;
+            this.txt_TenKH.TextChanged += new System.EventHandler(this.txt_TenKH_TextChanged);
             this.txt_TenKH.Leave += new System.EventHandler(this.txt_TenKH_Leave);
             // 
             // lb_MaKH
@@ -116,11 +117,13 @@
             // 
             // txt_CCCD
             // 
+            this.txt_CCCD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_CCCD.Location = new System.Drawing.Point(243, 373);
             this.txt_CCCD.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txt_CCCD.Name = "txt_CCCD";
             this.txt_CCCD.Size = new System.Drawing.Size(342, 40);
             this.txt_CCCD.TabIndex = 3;
+            this.txt_CCCD.TextChanged += new System.EventHandler(this.txt_CCCD_TextChanged);
             this.txt_CCCD.Leave += new System.EventHandler(this.txt_CCCD_Leave);
             // 
             // txt_Email
@@ -192,12 +195,13 @@
             // 
             // DTP_NgaySinh
             // 
-            this.DTP_NgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DTP_NgaySinh.CustomFormat = "dd/MM/yyyy";
+            this.DTP_NgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DTP_NgaySinh.Location = new System.Drawing.Point(243, 312);
             this.DTP_NgaySinh.Name = "DTP_NgaySinh";
             this.DTP_NgaySinh.Size = new System.Drawing.Size(342, 40);
             this.DTP_NgaySinh.TabIndex = 2;
-            this.DTP_NgaySinh.Leave += new System.EventHandler(this.dateTimePicker1_Leave);
+            this.DTP_NgaySinh.ValueChanged += new System.EventHandler(this.DTP_NgaySinh_ValueChanged);
             // 
             // ThongTinKhachHangMuaVe
             // 

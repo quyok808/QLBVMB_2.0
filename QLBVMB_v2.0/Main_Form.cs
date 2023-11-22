@@ -239,16 +239,16 @@ namespace QLBVMB_v2._0
         public void Filldgv_TrangChu_ThongTinHoaDon(List<string> data)
         {
             int newrow = dgv_TrangChu_ThongTinHoaDon.Rows.Add();
-            dgv_TrangChu_ThongTinHoaDon.Rows[newrow].Cells[0].Value = data[0];
-            dgv_TrangChu_ThongTinHoaDon.Rows[newrow].Cells[1].Value = data[1];
-            dgv_TrangChu_ThongTinHoaDon.Rows[newrow].Cells[2].Value = data[2];
-            dgv_TrangChu_ThongTinHoaDon.Rows[newrow].Cells[3].Value = data[3];
+            dgv_TrangChu_ThongTinHoaDon.Rows[newrow].Cells[0].Value = data[0].Trim();
+            dgv_TrangChu_ThongTinHoaDon.Rows[newrow].Cells[1].Value = data[1].Trim();
+            dgv_TrangChu_ThongTinHoaDon.Rows[newrow].Cells[2].Value = data[2].Trim();
+            dgv_TrangChu_ThongTinHoaDon.Rows[newrow].Cells[3].Value = data[3].Trim();
             dgv_TrangChu_ThongTinHoaDon.Rows[newrow].Cells[4].Value = cmb_TrangChu_NoiDi.Text;
             dgv_TrangChu_ThongTinHoaDon.Rows[newrow].Cells[5].Value = cmb_TrangChu_NoiDen.Text;
-            dgv_TrangChu_ThongTinHoaDon.Rows[newrow].Cells[6].Value = data[4];
+            dgv_TrangChu_ThongTinHoaDon.Rows[newrow].Cells[6].Value = data[4].Trim();
             dgv_TrangChu_ThongTinHoaDon.Rows[newrow].Cells[7].Value = txt_TrangChu_MaCB.Text.Trim();
-            dgv_TrangChu_ThongTinHoaDon.Rows[newrow].Cells[8].Value = data[5];
-            dgv_TrangChu_ThongTinHoaDon.Rows[newrow].Cells[9].Value = data[6];
+            dgv_TrangChu_ThongTinHoaDon.Rows[newrow].Cells[8].Value = data[5].Trim();
+            dgv_TrangChu_ThongTinHoaDon.Rows[newrow].Cells[9].Value = data[6].Trim();
             txt_TrangChu_TongTien.Text = tongTien().ToString();
         }
         #endregion
@@ -304,10 +304,14 @@ namespace QLBVMB_v2._0
         }
         private void dgv_Thongtinnhanvien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string manv = dgv_Thongtinnhanvien.Rows[e.RowIndex].Cells[0].Value.ToString();
-            NHANVIEN nv = db.NHANVIENs.FirstOrDefault(p => p.MaNV.Trim() == manv.Trim());
-            Thông_tin_nhân_viên f = new Thông_tin_nhân_viên(nv);
-            f.Show();
+            if (e.RowIndex > -1)
+            {
+                string manv = dgv_Thongtinnhanvien.Rows[e.RowIndex].Cells[0].Value.ToString();
+                NHANVIEN nv = db.NHANVIENs.FirstOrDefault(p => p.MaNV.Trim() == manv.Trim());
+                Thông_tin_nhân_viên f = new Thông_tin_nhân_viên(nv);
+                f.Show();
+            }
+
         }
         #endregion
         private void btn_TrangChu_Xoa_Click(object sender, EventArgs e)

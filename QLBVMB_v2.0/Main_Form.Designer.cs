@@ -31,13 +31,13 @@ namespace QLBVMB_v2._0
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_Form));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.label8 = new System.Windows.Forms.Label();
             this.dgv_Thongtinnhanvien = new System.Windows.Forms.DataGridView();
@@ -197,10 +197,10 @@ namespace QLBVMB_v2._0
             this.tabPage4.Controls.Add(this.txtemail);
             this.tabPage4.Controls.Add(this.txttennv);
             this.tabPage4.Controls.Add(this.toolStrip2);
-            this.tabPage4.Location = new System.Drawing.Point(4, 29);
+            this.tabPage4.Location = new System.Drawing.Point(4, 38);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1239, 550);
+            this.tabPage4.Size = new System.Drawing.Size(1239, 541);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Quản lí nhân viên";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -208,15 +208,18 @@ namespace QLBVMB_v2._0
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(493, 105);
+            this.label8.Font = new System.Drawing.Font("#9Slide05 SVNTaiga", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Blue;
+            this.label8.Location = new System.Drawing.Point(395, 42);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(154, 20);
+            this.label8.Size = new System.Drawing.Size(464, 96);
             this.label8.TabIndex = 5;
             this.label8.Text = "Thông tin nhân viên";
             // 
             // dgv_Thongtinnhanvien
             // 
             this.dgv_Thongtinnhanvien.AllowUserToAddRows = false;
+            this.dgv_Thongtinnhanvien.AllowUserToDeleteRows = false;
             this.dgv_Thongtinnhanvien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Thongtinnhanvien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Thongtinnhanvien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -225,6 +228,7 @@ namespace QLBVMB_v2._0
             this.Column11});
             this.dgv_Thongtinnhanvien.Location = new System.Drawing.Point(1, 187);
             this.dgv_Thongtinnhanvien.Name = "dgv_Thongtinnhanvien";
+            this.dgv_Thongtinnhanvien.ReadOnly = true;
             this.dgv_Thongtinnhanvien.RowHeadersWidth = 51;
             this.dgv_Thongtinnhanvien.RowTemplate.Height = 24;
             this.dgv_Thongtinnhanvien.Size = new System.Drawing.Size(1212, 334);
@@ -236,79 +240,88 @@ namespace QLBVMB_v2._0
             this.Column9.HeaderText = "Mã NV";
             this.Column9.MinimumWidth = 6;
             this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
             // 
             // Column10
             // 
             this.Column10.HeaderText = "Tên NV";
             this.Column10.MinimumWidth = 6;
             this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
             // 
             // Column11
             // 
             this.Column11.HeaderText = "Email";
             this.Column11.MinimumWidth = 6;
             this.Column11.Name = "Column11";
+            this.Column11.ReadOnly = true;
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(1, 160);
+            this.textBox9.Location = new System.Drawing.Point(1, 152);
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(52, 27);
+            this.textBox9.Size = new System.Drawing.Size(52, 35);
             this.textBox9.TabIndex = 2;
             this.textBox9.Text = "Lọc";
             this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtmanv
             // 
-            this.txtmanv.Location = new System.Drawing.Point(52, 160);
+            this.txtmanv.Location = new System.Drawing.Point(52, 152);
             this.txtmanv.Name = "txtmanv";
-            this.txtmanv.Size = new System.Drawing.Size(390, 27);
+            this.txtmanv.Size = new System.Drawing.Size(386, 35);
             this.txtmanv.TabIndex = 2;
             this.txtmanv.TextChanged += new System.EventHandler(this.txtmanv_TextChanged);
             // 
             // txtemail
             // 
-            this.txtemail.Location = new System.Drawing.Point(826, 162);
+            this.txtemail.Location = new System.Drawing.Point(825, 152);
             this.txtemail.Name = "txtemail";
-            this.txtemail.Size = new System.Drawing.Size(387, 27);
+            this.txtemail.Size = new System.Drawing.Size(388, 35);
             this.txtemail.TabIndex = 2;
             this.txtemail.TextChanged += new System.EventHandler(this.txtemail_TextChanged);
             // 
             // txttennv
             // 
-            this.txttennv.Location = new System.Drawing.Point(438, 161);
+            this.txttennv.Location = new System.Drawing.Point(438, 152);
             this.txttennv.Name = "txttennv";
-            this.txttennv.Size = new System.Drawing.Size(389, 27);
+            this.txttennv.Size = new System.Drawing.Size(387, 35);
             this.txttennv.TabIndex = 2;
             this.txttennv.TextChanged += new System.EventHandler(this.txttennv_TextChanged);
             // 
             // toolStrip2
             // 
+            this.toolStrip2.AutoSize = false;
             this.toolStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton5,
             this.toolStripButton7});
             this.toolStrip2.Location = new System.Drawing.Point(3, 3);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(1233, 27);
+            this.toolStrip2.Size = new System.Drawing.Size(1233, 39);
             this.toolStrip2.TabIndex = 1;
             this.toolStrip2.Text = "toolStrip2";
             // 
             // toolStripButton5
             // 
+            this.toolStripButton5.AutoSize = false;
+            this.toolStripButton5.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
             this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(70, 24);
+            this.toolStripButton5.Size = new System.Drawing.Size(87, 36);
             this.toolStripButton5.Text = "Thêm";
+            this.toolStripButton5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // toolStripButton7
             // 
+            this.toolStripButton7.Font = new System.Drawing.Font("#9Slide03 Arima Madurai Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
             this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(59, 24);
+            this.toolStripButton7.Size = new System.Drawing.Size(72, 36);
             this.toolStripButton7.Text = "Lịch";
+            this.toolStripButton7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // tabPage2
             // 
@@ -336,7 +349,7 @@ namespace QLBVMB_v2._0
             this.DTP_QLCB_NgayDi.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DTP_QLCB_NgayDi.Location = new System.Drawing.Point(109, 191);
             this.DTP_QLCB_NgayDi.Name = "DTP_QLCB_NgayDi";
-            this.DTP_QLCB_NgayDi.Size = new System.Drawing.Size(148, 27);
+            this.DTP_QLCB_NgayDi.Size = new System.Drawing.Size(148, 35);
             this.DTP_QLCB_NgayDi.TabIndex = 18;
             // 
             // cmb_QLCB_HangHangKhong
@@ -345,7 +358,7 @@ namespace QLBVMB_v2._0
             this.cmb_QLCB_HangHangKhong.FormattingEnabled = true;
             this.cmb_QLCB_HangHangKhong.Location = new System.Drawing.Point(382, 189);
             this.cmb_QLCB_HangHangKhong.Name = "cmb_QLCB_HangHangKhong";
-            this.cmb_QLCB_HangHangKhong.Size = new System.Drawing.Size(148, 28);
+            this.cmb_QLCB_HangHangKhong.Size = new System.Drawing.Size(148, 37);
             this.cmb_QLCB_HangHangKhong.TabIndex = 17;
             // 
             // cmb_QLCB_NoiDen
@@ -354,7 +367,7 @@ namespace QLBVMB_v2._0
             this.cmb_QLCB_NoiDen.FormattingEnabled = true;
             this.cmb_QLCB_NoiDen.Location = new System.Drawing.Point(300, 153);
             this.cmb_QLCB_NoiDen.Name = "cmb_QLCB_NoiDen";
-            this.cmb_QLCB_NoiDen.Size = new System.Drawing.Size(148, 28);
+            this.cmb_QLCB_NoiDen.Size = new System.Drawing.Size(148, 37);
             this.cmb_QLCB_NoiDen.TabIndex = 17;
             // 
             // cmb_QLCB_KhoiHanhTu
@@ -363,7 +376,7 @@ namespace QLBVMB_v2._0
             this.cmb_QLCB_KhoiHanhTu.FormattingEnabled = true;
             this.cmb_QLCB_KhoiHanhTu.Location = new System.Drawing.Point(109, 153);
             this.cmb_QLCB_KhoiHanhTu.Name = "cmb_QLCB_KhoiHanhTu";
-            this.cmb_QLCB_KhoiHanhTu.Size = new System.Drawing.Size(148, 28);
+            this.cmb_QLCB_KhoiHanhTu.Size = new System.Drawing.Size(148, 37);
             this.cmb_QLCB_KhoiHanhTu.TabIndex = 17;
             // 
             // label15
@@ -371,7 +384,7 @@ namespace QLBVMB_v2._0
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(263, 196);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(139, 20);
+            this.label15.Size = new System.Drawing.Size(146, 29);
             this.label15.TabIndex = 16;
             this.label15.Text = "Hãng hàng không";
             // 
@@ -380,7 +393,7 @@ namespace QLBVMB_v2._0
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(22, 191);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(65, 20);
+            this.label10.Size = new System.Drawing.Size(70, 29);
             this.label10.TabIndex = 16;
             this.label10.Text = "Ngày đi";
             // 
@@ -389,7 +402,7 @@ namespace QLBVMB_v2._0
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(263, 161);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(39, 20);
+            this.label9.Size = new System.Drawing.Size(43, 29);
             this.label9.TabIndex = 16;
             this.label9.Text = "Đến";
             // 
@@ -398,7 +411,7 @@ namespace QLBVMB_v2._0
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(22, 161);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(107, 20);
+            this.label7.Size = new System.Drawing.Size(113, 29);
             this.label7.TabIndex = 16;
             this.label7.Text = "Khởi hành từ ";
             // 
@@ -534,10 +547,10 @@ namespace QLBVMB_v2._0
             this.tabPage1.Controls.Add(this.rd_TrangChu_KhuHoi);
             this.tabPage1.Controls.Add(this.panel_ChonGhe);
             this.tabPage1.Controls.Add(this.dgv_TrangChu_ThongTinHoaDon);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Location = new System.Drawing.Point(4, 38);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1239, 550);
+            this.tabPage1.Size = new System.Drawing.Size(1239, 541);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Trang chủ";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -557,7 +570,7 @@ namespace QLBVMB_v2._0
             this.txt_TrangChu_MaCB.Location = new System.Drawing.Point(561, 259);
             this.txt_TrangChu_MaCB.Name = "txt_TrangChu_MaCB";
             this.txt_TrangChu_MaCB.ReadOnly = true;
-            this.txt_TrangChu_MaCB.Size = new System.Drawing.Size(100, 27);
+            this.txt_TrangChu_MaCB.Size = new System.Drawing.Size(100, 35);
             this.txt_TrangChu_MaCB.TabIndex = 25;
             this.txt_TrangChu_MaCB.TextChanged += new System.EventHandler(this.txt_TrangChu_MaCB_TextChanged);
             // 
@@ -566,7 +579,7 @@ namespace QLBVMB_v2._0
             this.txt_TrangChu_TongTien.Location = new System.Drawing.Point(561, 302);
             this.txt_TrangChu_TongTien.Name = "txt_TrangChu_TongTien";
             this.txt_TrangChu_TongTien.ReadOnly = true;
-            this.txt_TrangChu_TongTien.Size = new System.Drawing.Size(217, 27);
+            this.txt_TrangChu_TongTien.Size = new System.Drawing.Size(217, 35);
             this.txt_TrangChu_TongTien.TabIndex = 11;
             // 
             // label6
@@ -574,7 +587,7 @@ namespace QLBVMB_v2._0
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(471, 265);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 20);
+            this.label6.Size = new System.Drawing.Size(56, 29);
             this.label6.TabIndex = 24;
             this.label6.Text = "MaCB";
             // 
@@ -587,14 +600,14 @@ namespace QLBVMB_v2._0
             this.dgv_TrangChu_ThongTinChuyenBay.BackgroundColor = System.Drawing.Color.White;
             this.dgv_TrangChu_ThongTinChuyenBay.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgv_TrangChu_ThongTinChuyenBay.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_TrangChu_ThongTinChuyenBay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("#9Slide03 Arima Madurai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_TrangChu_ThongTinChuyenBay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_TrangChu_ThongTinChuyenBay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_TrangChu_ThongTinChuyenBay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column27,
@@ -603,26 +616,26 @@ namespace QLBVMB_v2._0
             this.Column35,
             this.Column36,
             this.Column37});
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_TrangChu_ThongTinChuyenBay.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("#9Slide03 Arima Madurai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_TrangChu_ThongTinChuyenBay.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_TrangChu_ThongTinChuyenBay.EnableHeadersVisualStyles = false;
             this.dgv_TrangChu_ThongTinChuyenBay.Location = new System.Drawing.Point(792, 6);
             this.dgv_TrangChu_ThongTinChuyenBay.Name = "dgv_TrangChu_ThongTinChuyenBay";
             this.dgv_TrangChu_ThongTinChuyenBay.ReadOnly = true;
             this.dgv_TrangChu_ThongTinChuyenBay.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_TrangChu_ThongTinChuyenBay.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("#9Slide03 Arima Madurai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_TrangChu_ThongTinChuyenBay.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_TrangChu_ThongTinChuyenBay.RowHeadersVisible = false;
             this.dgv_TrangChu_ThongTinChuyenBay.RowHeadersWidth = 51;
             this.dgv_TrangChu_ThongTinChuyenBay.RowTemplate.Height = 30;
@@ -634,12 +647,12 @@ namespace QLBVMB_v2._0
             // 
             // Column27
             // 
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black;
-            this.Column27.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.Column27.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column27.HeaderText = "Mã chuyến bay";
             this.Column27.MinimumWidth = 6;
             this.Column27.Name = "Column27";
@@ -647,8 +660,8 @@ namespace QLBVMB_v2._0
             // 
             // Column33
             // 
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column33.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column33.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column33.HeaderText = "Giờ khởi hành ";
             this.Column33.MinimumWidth = 6;
             this.Column33.Name = "Column33";
@@ -690,7 +703,7 @@ namespace QLBVMB_v2._0
             this.cmb_TrangChu_NoiDen.FormattingEnabled = true;
             this.cmb_TrangChu_NoiDen.Location = new System.Drawing.Point(561, 95);
             this.cmb_TrangChu_NoiDen.Name = "cmb_TrangChu_NoiDen";
-            this.cmb_TrangChu_NoiDen.Size = new System.Drawing.Size(217, 28);
+            this.cmb_TrangChu_NoiDen.Size = new System.Drawing.Size(217, 37);
             this.cmb_TrangChu_NoiDen.TabIndex = 22;
             // 
             // cmb_TrangChu_NoiDi
@@ -698,7 +711,7 @@ namespace QLBVMB_v2._0
             this.cmb_TrangChu_NoiDi.FormattingEnabled = true;
             this.cmb_TrangChu_NoiDi.Location = new System.Drawing.Point(561, 53);
             this.cmb_TrangChu_NoiDi.Name = "cmb_TrangChu_NoiDi";
-            this.cmb_TrangChu_NoiDi.Size = new System.Drawing.Size(217, 28);
+            this.cmb_TrangChu_NoiDi.Size = new System.Drawing.Size(217, 37);
             this.cmb_TrangChu_NoiDi.TabIndex = 21;
             this.cmb_TrangChu_NoiDi.SelectedIndexChanged += new System.EventHandler(this.cmb_TrangChu_NoiDi_SelectedIndexChanged);
             // 
@@ -717,7 +730,7 @@ namespace QLBVMB_v2._0
             this.lb_TrangChu_NgayVe.AutoSize = true;
             this.lb_TrangChu_NgayVe.Location = new System.Drawing.Point(471, 182);
             this.lb_TrangChu_NgayVe.Name = "lb_TrangChu_NgayVe";
-            this.lb_TrangChu_NgayVe.Size = new System.Drawing.Size(69, 20);
+            this.lb_TrangChu_NgayVe.Size = new System.Drawing.Size(73, 29);
             this.lb_TrangChu_NgayVe.TabIndex = 19;
             this.lb_TrangChu_NgayVe.Text = "Ngày về";
             // 
@@ -726,7 +739,7 @@ namespace QLBVMB_v2._0
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(471, 142);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 20);
+            this.label4.Size = new System.Drawing.Size(70, 29);
             this.label4.TabIndex = 18;
             this.label4.Text = "Ngày đi";
             // 
@@ -737,7 +750,7 @@ namespace QLBVMB_v2._0
             this.DTP_TrangChu_NgayVe.Location = new System.Drawing.Point(561, 177);
             this.DTP_TrangChu_NgayVe.MinDate = new System.DateTime(2023, 11, 13, 0, 0, 0, 0);
             this.DTP_TrangChu_NgayVe.Name = "DTP_TrangChu_NgayVe";
-            this.DTP_TrangChu_NgayVe.Size = new System.Drawing.Size(217, 27);
+            this.DTP_TrangChu_NgayVe.Size = new System.Drawing.Size(217, 35);
             this.DTP_TrangChu_NgayVe.TabIndex = 17;
             this.DTP_TrangChu_NgayVe.ValueChanged += new System.EventHandler(this.DTP_TrangChu_NgayVe_ValueChanged);
             // 
@@ -748,7 +761,7 @@ namespace QLBVMB_v2._0
             this.DTP_TrangChu_NgayDi.Location = new System.Drawing.Point(561, 137);
             this.DTP_TrangChu_NgayDi.MinDate = new System.DateTime(2023, 11, 16, 0, 0, 0, 0);
             this.DTP_TrangChu_NgayDi.Name = "DTP_TrangChu_NgayDi";
-            this.DTP_TrangChu_NgayDi.Size = new System.Drawing.Size(217, 27);
+            this.DTP_TrangChu_NgayDi.Size = new System.Drawing.Size(217, 35);
             this.DTP_TrangChu_NgayDi.TabIndex = 16;
             this.DTP_TrangChu_NgayDi.Value = new System.DateTime(2023, 11, 16, 0, 0, 0, 0);
             this.DTP_TrangChu_NgayDi.ValueChanged += new System.EventHandler(this.DTP_TrangChu_NgayDi_ValueChanged);
@@ -758,7 +771,7 @@ namespace QLBVMB_v2._0
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(471, 98);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 20);
+            this.label3.Size = new System.Drawing.Size(71, 29);
             this.label3.TabIndex = 15;
             this.label3.Text = "Nơi đến";
             // 
@@ -767,7 +780,7 @@ namespace QLBVMB_v2._0
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(471, 56);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 20);
+            this.label2.Size = new System.Drawing.Size(56, 29);
             this.label2.TabIndex = 14;
             this.label2.Text = "Nơi đi";
             // 
@@ -777,7 +790,7 @@ namespace QLBVMB_v2._0
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(471, 305);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 20);
+            this.label1.Size = new System.Drawing.Size(83, 29);
             this.label1.TabIndex = 10;
             this.label1.Text = "Tổng tiền";
             // 
@@ -795,7 +808,7 @@ namespace QLBVMB_v2._0
             this.rd_TrangChu_1chieu.AutoSize = true;
             this.rd_TrangChu_1chieu.Location = new System.Drawing.Point(638, 14);
             this.rd_TrangChu_1chieu.Name = "rd_TrangChu_1chieu";
-            this.rd_TrangChu_1chieu.Size = new System.Drawing.Size(87, 24);
+            this.rd_TrangChu_1chieu.Size = new System.Drawing.Size(88, 33);
             this.rd_TrangChu_1chieu.TabIndex = 7;
             this.rd_TrangChu_1chieu.TabStop = true;
             this.rd_TrangChu_1chieu.Text = "1 Chiều";
@@ -806,7 +819,7 @@ namespace QLBVMB_v2._0
             this.rd_TrangChu_KhuHoi.AutoSize = true;
             this.rd_TrangChu_KhuHoi.Location = new System.Drawing.Point(517, 14);
             this.rd_TrangChu_KhuHoi.Name = "rd_TrangChu_KhuHoi";
-            this.rd_TrangChu_KhuHoi.Size = new System.Drawing.Size(86, 24);
+            this.rd_TrangChu_KhuHoi.Size = new System.Drawing.Size(91, 33);
             this.rd_TrangChu_KhuHoi.TabIndex = 6;
             this.rd_TrangChu_KhuHoi.TabStop = true;
             this.rd_TrangChu_KhuHoi.Text = "Khứ hồi";
@@ -829,14 +842,14 @@ namespace QLBVMB_v2._0
             this.dgv_TrangChu_ThongTinHoaDon.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgv_TrangChu_ThongTinHoaDon.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgv_TrangChu_ThongTinHoaDon.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_TrangChu_ThongTinHoaDon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("#9Slide03 Arima Madurai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_TrangChu_ThongTinHoaDon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_TrangChu_ThongTinHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_TrangChu_ThongTinHoaDon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -849,14 +862,14 @@ namespace QLBVMB_v2._0
             this.Column8,
             this.Column38,
             this.Column39});
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_TrangChu_ThongTinHoaDon.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("#9Slide03 Arima Madurai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_TrangChu_ThongTinHoaDon.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_TrangChu_ThongTinHoaDon.EnableHeadersVisualStyles = false;
             this.dgv_TrangChu_ThongTinHoaDon.Location = new System.Drawing.Point(3, 343);
             this.dgv_TrangChu_ThongTinHoaDon.Name = "dgv_TrangChu_ThongTinHoaDon";
@@ -951,7 +964,7 @@ namespace QLBVMB_v2._0
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Font = new System.Drawing.Font("#9Slide03 Arima Madurai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -979,35 +992,35 @@ namespace QLBVMB_v2._0
             // 
             this.textBox11.Location = new System.Drawing.Point(54, 108);
             this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(293, 27);
+            this.textBox11.Size = new System.Drawing.Size(293, 35);
             this.textBox11.TabIndex = 2;
             // 
             // textBox13
             // 
             this.textBox13.Location = new System.Drawing.Point(346, 108);
             this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(291, 27);
+            this.textBox13.Size = new System.Drawing.Size(291, 35);
             this.textBox13.TabIndex = 2;
             // 
             // textBox14
             // 
             this.textBox14.Location = new System.Drawing.Point(923, 108);
             this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(292, 27);
+            this.textBox14.Size = new System.Drawing.Size(292, 35);
             this.textBox14.TabIndex = 2;
             // 
             // textBox12
             // 
             this.textBox12.Location = new System.Drawing.Point(636, 108);
             this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(288, 27);
+            this.textBox12.Size = new System.Drawing.Size(288, 35);
             this.textBox12.TabIndex = 2;
             // 
             // textBox10
             // 
             this.textBox10.Location = new System.Drawing.Point(3, 108);
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(422, 27);
+            this.textBox10.Size = new System.Drawing.Size(422, 35);
             this.textBox10.TabIndex = 2;
             this.textBox10.Text = "Lọc";
             this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1107,42 +1120,42 @@ namespace QLBVMB_v2._0
             // 
             this.textBox19.Location = new System.Drawing.Point(985, 340);
             this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(236, 27);
+            this.textBox19.Size = new System.Drawing.Size(236, 35);
             this.textBox19.TabIndex = 1;
             // 
             // textBox28
             // 
             this.textBox28.Location = new System.Drawing.Point(752, 340);
             this.textBox28.Name = "textBox28";
-            this.textBox28.Size = new System.Drawing.Size(240, 27);
+            this.textBox28.Size = new System.Drawing.Size(240, 35);
             this.textBox28.TabIndex = 1;
             // 
             // textBox18
             // 
             this.textBox18.Location = new System.Drawing.Point(518, 340);
             this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(235, 27);
+            this.textBox18.Size = new System.Drawing.Size(235, 35);
             this.textBox18.TabIndex = 1;
             // 
             // textBox17
             // 
             this.textBox17.Location = new System.Drawing.Point(285, 340);
             this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(237, 27);
+            this.textBox17.Size = new System.Drawing.Size(237, 35);
             this.textBox17.TabIndex = 1;
             // 
             // textBox16
             // 
             this.textBox16.Location = new System.Drawing.Point(51, 340);
             this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(235, 27);
+            this.textBox16.Size = new System.Drawing.Size(235, 35);
             this.textBox16.TabIndex = 1;
             // 
             // textBox15
             // 
             this.textBox15.Location = new System.Drawing.Point(0, 340);
             this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(52, 27);
+            this.textBox15.Size = new System.Drawing.Size(52, 35);
             this.textBox15.TabIndex = 1;
             // 
             // groupBox1
@@ -1175,21 +1188,21 @@ namespace QLBVMB_v2._0
             // 
             this.textBox22.Location = new System.Drawing.Point(105, 102);
             this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(232, 27);
+            this.textBox22.Size = new System.Drawing.Size(232, 35);
             this.textBox22.TabIndex = 4;
             // 
             // textBox21
             // 
             this.textBox21.Location = new System.Drawing.Point(105, 66);
             this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(232, 27);
+            this.textBox21.Size = new System.Drawing.Size(232, 35);
             this.textBox21.TabIndex = 4;
             // 
             // textBox20
             // 
             this.textBox20.Location = new System.Drawing.Point(105, 24);
             this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(232, 27);
+            this.textBox20.Size = new System.Drawing.Size(232, 35);
             this.textBox20.TabIndex = 4;
             // 
             // label14
@@ -1197,7 +1210,7 @@ namespace QLBVMB_v2._0
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(6, 147);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(93, 20);
+            this.label14.Size = new System.Drawing.Size(95, 29);
             this.label14.TabIndex = 3;
             this.label14.Text = "Điều kiện : ";
             // 
@@ -1206,7 +1219,7 @@ namespace QLBVMB_v2._0
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(6, 108);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(126, 20);
+            this.label13.Size = new System.Drawing.Size(131, 29);
             this.label13.TabIndex = 2;
             this.label13.Text = "Ngày kết thúc : ";
             // 
@@ -1215,7 +1228,7 @@ namespace QLBVMB_v2._0
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(6, 69);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(120, 20);
+            this.label12.Size = new System.Drawing.Size(122, 29);
             this.label12.TabIndex = 1;
             this.label12.Text = "Ngày Bắt đầu :";
             // 
@@ -1224,7 +1237,7 @@ namespace QLBVMB_v2._0
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(6, 30);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(77, 20);
+            this.label11.Size = new System.Drawing.Size(76, 29);
             this.label11.TabIndex = 0;
             this.label11.Text = "Mã KM : ";
             // 
@@ -1332,28 +1345,28 @@ namespace QLBVMB_v2._0
             // 
             this.textBox25.Location = new System.Drawing.Point(0, 87);
             this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(52, 27);
+            this.textBox25.Size = new System.Drawing.Size(52, 35);
             this.textBox25.TabIndex = 4;
             // 
             // textBox27
             // 
             this.textBox27.Location = new System.Drawing.Point(833, 87);
             this.textBox27.Name = "textBox27";
-            this.textBox27.Size = new System.Drawing.Size(388, 27);
+            this.textBox27.Size = new System.Drawing.Size(388, 35);
             this.textBox27.TabIndex = 4;
             // 
             // textBox26
             // 
             this.textBox26.Location = new System.Drawing.Point(439, 87);
             this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(395, 27);
+            this.textBox26.Size = new System.Drawing.Size(395, 35);
             this.textBox26.TabIndex = 4;
             // 
             // textBox24
             // 
             this.textBox24.Location = new System.Drawing.Point(51, 87);
             this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(388, 27);
+            this.textBox24.Size = new System.Drawing.Size(388, 35);
             this.textBox24.TabIndex = 4;
             // 
             // button9
@@ -1492,6 +1505,7 @@ namespace QLBVMB_v2._0
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.Font = new System.Drawing.Font("#9Slide03 Arima Madurai", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "Main_Form";

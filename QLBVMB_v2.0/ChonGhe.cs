@@ -86,7 +86,6 @@ namespace QLBVMB_v2._0
                         ThongTinKhachHangMuaVe frm = new ThongTinKhachHangMuaVe();
                         if (frm.ShowDialog() == DialogResult.OK)
                         {
-                        
                             dataDgv_ThongtinHoaDon.Add(frm.lb_MaKH.Text.Trim());
                             dataDgv_ThongtinHoaDon.Add(frm.txt_TenKH.Text);
                             dataDgv_ThongtinHoaDon.Add(frm.txt_CCCD.Text);
